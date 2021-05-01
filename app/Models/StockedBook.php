@@ -12,4 +12,8 @@ class StockedBook extends Model
     public function reservedBooks(){
         return $this->hasMany(ReservedBook::class);
     }
+
+    public function book(){
+        return $this->hasOne(Book::class);
+    }
 }

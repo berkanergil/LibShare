@@ -22,5 +22,12 @@ class Librarian extends Authenticatable
         "email"
     ];
 
+    public function books(){
+        return $this->hasMany(Book::class);
+    }
+
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
 
 }

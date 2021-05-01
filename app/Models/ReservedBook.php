@@ -18,6 +18,6 @@ class ReservedBook extends Model
     }
 
     public function penalizedReservation(){
-        return $this->belongsTo(PenalizedRezervation::class);
+        return $this->belongsTo(PenalizedReservation::class);
     }
 }

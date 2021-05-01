@@ -46,7 +46,7 @@ class User extends Authenticatable
         return $this->hasOne(Card::class);
     }
 
-    public function books(){
+    public function reservedBooks(){
         return $this->hasMany(ReservedBook::class);
     }
 }
