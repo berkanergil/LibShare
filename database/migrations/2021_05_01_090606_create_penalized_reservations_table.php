@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePenalizedRezervationsTable extends Migration
+class CreatePenalizedReservationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePenalizedRezervationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('penalized_rezervations', function (Blueprint $table) {
+        Schema::create('penalized_reservations', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('reserved_book_id')->unsigned();
             $table->foreign('reserved_book_id')->references('id')->on('reserved_books')->onDelete("cascade");
@@ -31,6 +31,6 @@ class CreatePenalizedRezervationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penalized_rezervations');
+        Schema::dropIfExists('penalized_reservations');
     }
 }

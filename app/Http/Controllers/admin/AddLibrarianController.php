@@ -14,8 +14,9 @@ class AddLibrarianController extends Controller
     }
 
     public function store(Request $request){
+        $admin_id=auth("admin")->user()->username;
         Librarian::create([
-            "admin_id"=>$request->admin_id,
+            "admin_id"=>$admin_id,
             "username"=>$request->username,
             "email"=>$request->email,
             "password"=>Hash::make($request->password),
