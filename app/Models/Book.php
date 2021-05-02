@@ -9,6 +9,18 @@ class Book extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        "librarian_id",
+        "category_id",
+        "title",
+        "author",
+        "publish_date",
+        "language",
+        "description",
+        "image",
+        "stock_number"
+    ];
+
     public function stockedBooks(){
         return $this->hasMany(StockedBook::class);
     }

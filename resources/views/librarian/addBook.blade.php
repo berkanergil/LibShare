@@ -2,15 +2,70 @@
 
 @section('content')
     <h1>ADD BOOK</h1>
-        <form action="{{ route("librarian_addBook") }}" method="POST">
+        <form action="{{ route("librarian_addBook") }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="admin_id" value="1">
-            <input type="text" name="username" placeholder="username">
+            <label for="categories">category: </label>
+            <select class="form-control" name="category_id" id="categories">
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}"> 
+                        {{ $category->title }} 
+                    </option>
+                @endforeach    
+            </select>
             <br>
-            <input type="text" name="email" placeholder="email">
+            @error('title')
+                    {{ $message }}
+                    <br>
+            @enderror
+            @if (session("error_title"))
+                {{ session("errror_title") }}    
+                <br>
+            @endif
+            <input type="text" name="title" placeholder="title" value="{{ old("title") }}">
             <br>
-            <input type="text" name="password" placeholder="password">
+            @error('title')
+                    {{ $message }}
+                    <br>
+            @enderror
+            <input type="text" name="author" placeholder="author" value="{{ old("author") }}">
             <br>
+            @error('author')
+                    {{ $message }}
+                    <br>
+            @enderror
+            <label for="publish_date">publish date:</label>
+            <input type="date" name="publish_date" id="publish_date" value="{{ old("publish_date") }}">
+            <br>
+            @error('publish_date')
+                    {{ $message }}
+                    <br>
+            @enderror
+            <input type="text" name="description" placeholder="description" value="{{ old("description") }}">
+            <br>
+            @error('description')
+                    {{ $message }}
+                    <br>
+            @enderror
+            <input type="text" name="language" placeholder="language" value="{{ old("language") }}">
+            <br>
+            @error('language')
+                    {{ $message }}
+                    <br>
+            @enderror
+            <label for="image">image: </label>
+            <input type="file" name="image" id="image" placeholder="image">
+            <br>
+            @error('image')
+                    {{ $message }}
+                    <br>
+            @enderror
+            <input type="number" name="stock_number" placeholder="stock number" value="{{ old("stock_number") }}">
+            <br>
+            @error('stock_number')
+                    {{ $message }}
+                    <br>
+            @enderror
             <button type="submit" name="submit">Submit</button>
         </form>
+        
 @endsection

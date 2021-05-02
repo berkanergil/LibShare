@@ -25,6 +25,7 @@ class CreateBooksTable extends Migration
             $table->string("language");
             $table->text("description");
             $table->string("image");
+            $table->tinyInteger("stock_number");
             $table->timestamps();
         });
     }

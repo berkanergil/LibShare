@@ -9,6 +9,11 @@ class StockedBook extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        "book_id",
+        "available_date"
+    ];
+
     public function reservedBooks(){
         return $this->hasMany(ReservedBook::class);
     }

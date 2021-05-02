@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class LogoutController extends Controller
 {
     public function store(){
-        return Auth::logout();
+        Auth::logout();
+        return view("welcome");
     }
 }

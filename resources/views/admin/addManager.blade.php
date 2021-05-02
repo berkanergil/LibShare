@@ -10,8 +10,8 @@
                     {{ $message }}
                     <br>
             @enderror
-            @if (session()->has("error_username"))
-                {{ session()->get("error_username") }}
+            @if (session("error_username"))
+                {{ session("error_username") }}
                 <br>
             @endif
             <input type="text" name="email" placeholder="email" value="{{ old("email") }}">
@@ -20,8 +20,8 @@
                     {{ $message }}
                     <br>
             @enderror
-            @if (session()->has("error_email"))
-                {{ session()->get("error_email") }}
+            @if (session("error_email"))
+                {{ session("error_email") }}
                 <br>
             @endif
             <input type="text" name="password" placeholder="password">

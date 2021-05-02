@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\librarian;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LogoutController extends Controller
 {
     public function store(){
-        return Auth::guard('librarian')->logout();
+        Auth::guard('librarian')->logout();
+        return view("welcome");
     }
 }

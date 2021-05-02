@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\manager\AddCategoryController;
 use App\Http\Controllers\manager\LibrarianController;
 use App\Http\Controllers\manager\AddLibrarianController;
+use App\Http\Controllers\manager\CategoriesController;
+use App\Http\Controllers\manager\CategoryController;
 use App\Http\Controllers\manager\LibrariansController;
 use App\Http\Controllers\manager\LoginController;
 use App\Http\Controllers\manager\LogoutController;
@@ -26,4 +29,12 @@ Route::prefix("manager")->group(function (){
 
         Route::get('/addLibrarian', [AddLibrarianController::class,"index"])->name($name_prefix."addLibrarian");
         Route::post('/addLibrarian', [AddLibrarianController::class,"store"]);
+
+        Route::get('/addCategory', [AddCategoryController::class,"index"])->name($name_prefix."addCategory");
+        Route::post('/addCategory', [AddCategoryController::class,"store"]);
+
+        Route::get('/categories',[CategoriesController::class,"index"])->name($name_prefix."categories");
+
+        Route::get('/category/{category:title}',[CategoryController::class,"index"])->name($name_prefix."category");
+
     });

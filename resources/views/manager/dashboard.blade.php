@@ -7,5 +7,9 @@
     <br>
     <a href="{{ route("manager_addLibrarian") }}">add librarian</a>
     <br>
+    <a href="{{ route("manager_categories") }}">show categories</a>
+    <br>
+    <a href="{{ route("manager_addCategory") }}">add category</a>
+    <br>
     <a href="{{ route("manager_logout") }}">logout</a>
 @endsection
