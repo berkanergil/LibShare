@@ -52,6 +52,11 @@ return [
             'provider' => 'admins',
         ],
 
+        'manager' => [
+            'driver' => 'session',
+            'provider' => 'managers',
+        ],
+
         'librarian' => [
             'driver' => 'session',
             'provider' => 'librarians',
@@ -84,6 +89,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'managers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Manager::class,
         ],
 
         'librarians' => [

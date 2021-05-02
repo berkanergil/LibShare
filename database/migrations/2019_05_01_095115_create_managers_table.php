@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLibrariansTable extends Migration
+class CreateManagersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,16 @@ class CreateLibrariansTable extends Migration
      */
     public function up()
     {
-        Schema::create('librarians', function (Blueprint $table) {
+        Schema::create('managers', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('manager_id')->unsigned();
-            $table->foreign('manager_id')->references('id')->on('managers');
+            $table->bigInteger('admin_id')->unsigned();
+            $table->foreign('admin_id')->references('id')->on('admins');
             $table->string("name")->nullable();
             $table->string("surname")->nullable();
             $table->string("username")->unique();
             $table->string('email')->unique();
             $table->string('phone_number')->nullable();
             $table->string("password");
-            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -36,6 +35,6 @@ class CreateLibrariansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('librarians');
+        Schema::dropIfExists('managers');
     }
 }

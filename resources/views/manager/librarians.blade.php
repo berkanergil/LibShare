@@ -5,7 +5,7 @@
     <br>
     @if ($librarians->count())
         @foreach ($librarians as $librarian) 
-        <a href="{{route("admin_librarian",$librarian)}}"><h3>{{ $librarian->username }}</h3></a>
+        <a href="{{route("manager_librarian",$librarian)}}"><h3>{{ $librarian->username }}</h3></a>
         @endforeach
         {{ $librarians->links() }}
     @else

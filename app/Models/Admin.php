@@ -13,7 +13,8 @@ class Admin extends Authenticatable
     protected $table = 'admins';
     protected $guarded = array();
 
-    public function librarians(){
-        return $this->hasMany(Librarian::class);
+    public function managers(){
+        return $this->hasMany(Manager::class);
     }
+    
 }

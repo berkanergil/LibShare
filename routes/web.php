@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 include("web_admin.php");
 include("web_librarian.php");
+include("web_manager.php");
+include("web_user.php");

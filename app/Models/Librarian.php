@@ -14,7 +14,7 @@ class Librarian extends Authenticatable
     protected $guarded = array();
 
     protected $fillable = [
-        "admin_id",
+        "manager_id",
         'name',
         'surname',
         'username',
@@ -26,8 +26,8 @@ class Librarian extends Authenticatable
         return $this->hasMany(Book::class);
     }
 
-    public function admin(){
-        return $this->belongsTo(Admin::class);
+    public function manager(){
+        return $this->belongsTo(Manager::class);
     }
 
 }
