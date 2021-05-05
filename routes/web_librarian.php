@@ -18,7 +18,7 @@ Route::prefix("librarian")->group(function (){
         Route::get('/login', [LoginController::class,"index"])->name($name_prefix."login");
         Route::post('/login', [LoginController::class,"store"]);
 
-        Route::get('/addBook', [AddBookController::class,"index"])->name($name_prefix."addBook");
+        Route::get('/addBook', [AddBookController::class,"index"])->name($name_prefix."addBook"); 
         Route::post('/addBook', [AddBookController::class,"store"]);
 
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");

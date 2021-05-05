@@ -11,5 +11,7 @@
     <br>
     <a href="{{ route("user_login") }}">USER LOGIN</a>
     <br>
+    <a href="{{ route("user_register") }}">USER REGISTER</a>
+    <br>
 @endsection
 

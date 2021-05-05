@@ -17,6 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
@@ -42,8 +43,8 @@ class User extends Authenticatable
     ];
 
 
-    public function card(){
-        return $this->hasOne(Card::class);
+    public function cards(){
+        return $this->hasMany(Card::class);
     }
 
     public function reservedBooks(){

@@ -20,11 +20,12 @@ class AddBookController extends Controller
     }
 
     public function store(Request $request){
+
         $request->validate([
             "category_id"=>"required",
             "title"=>"required|max:255",
             "author"=>"required|max:255",
-            "publish_date"=>"required|date",
+            "publish_date"=>"required|date|before:".Carbon::now(),
             "language"=>"required|max:255",
             "description"=>"required|max:255",
             "image"=>"required|image|mimes:jpeg,png,jpg,gif,svg,tmp|max:2048",

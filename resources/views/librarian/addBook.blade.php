@@ -46,14 +46,22 @@
                     {{ $message }}
                     <br>
             @enderror
-            <input type="text" name="language" placeholder="language" value="{{ old("language") }}">
+            <label for="language">language:</label>
+            <select class="form-control" name="language" id="language" value="{{ old("language") }}">
+                    <option value="en"> 
+                        english
+                    </option>
+                    <option value="tr"> 
+                        turkish
+                    </option>
+            </select>
             <br>
             @error('language')
                     {{ $message }}
                     <br>
             @enderror
             <label for="image">image: </label>
-            <input type="file" name="image" id="image" placeholder="image">
+            <input type="file" name="image" id="image" placeholder="image" value="{{ old("image") }}">
             <br>
             @error('image')
                     {{ $message }}
