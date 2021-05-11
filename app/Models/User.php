@@ -43,11 +43,11 @@ class User extends Authenticatable
     ];
 
 
-    public function cards(){
-        return $this->hasMany(Card::class);
+    public function card(){
+        return $this->belongsTo(Card::class);
     }
 
-    public function reservedBooks(){
-        return $this->hasMany(ReservedBook::class);
+    public function savedBooks(){
+        return $this->hasMany(SavedBook::class);
     }
 }

@@ -15,10 +15,8 @@ class CreateReservedBooksTable extends Migration
     {
         Schema::create('reserved_books', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete("cascade");
-            $table->bigInteger('stocked_book_id')->unsigned();
-            $table->foreign('stocked_book_id')->references('id')->on('stocked_books')->onDelete("cascade");
+            $table->bigInteger('saved_book_id')->unsigned();
+            $table->foreign('saved_book_id')->references('id')->on('saved_books')->onDelete("cascade");
             $table->date('start_date')->format('m/d/Y');
             $table->date('end_date')->format('m/d/Y');
             $table->timestamps();

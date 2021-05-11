@@ -9,12 +9,8 @@ class ReservedBook extends Model
 {
     use HasFactory;
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
-
-    public function stockedBook(){
-        return $this->belongsTo(StockedBook::class);
+    public function savedBook(){
+        return $this->belongsTo(SavedBook::class);
     }
 
     public function penalizedReservation(){
