@@ -14,6 +14,8 @@ class StockedBook extends Model
         "available_date"
     ];
 
+    public $timestamps = true;
+
     public function savedBooks(){
         return $this->hasMany(SavedBook::class);
     }

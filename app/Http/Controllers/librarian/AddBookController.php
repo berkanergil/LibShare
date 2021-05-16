@@ -52,14 +52,12 @@ class AddBookController extends Controller
             $book_id=Book::latest()->first()->id;
 
             for($i=0;$i<$request->stock_number;$i++){
-                $stocked_books[]=[
+                StockedBook::create([
                     "book_id"=>$book_id,
                     "available_date"=>Carbon::now()->toDateString()
-                ];
+                ]);
             }
-
-            StockedBook::insert($stocked_books);
-
+            
             return view("librarian.dashboard");
         }else{
             return back()->with("error_title","This title is already exist.");

@@ -1,20 +1,41 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<h1>ADMIN LOGIN</h1>
-<br>
-    <form action="{{ route("admin_login") }}" method="post">
+
+<div class="container-fluid" style="min-height: 100vh">
+    <div class="login-box" style="vertical-align: center !important;">
+      <h1 class="text-center">Libshare</h1>
+    
+      <h2 style="opacity: 0.3 !important;">Login | Admin</h2>
+      <form action="{{ route("admin_login") }}" method="post">
         @csrf
-        <input type="text" placeholder="username" name="username">
-        <br>
-        <input type="password" placeholder="password" name="password">
-        <br>
-        <label for="rememberMe">Remember me:</label>
-        <input type="checkbox" name="rememberMe" id="rememberMe">
-        <br>
-        <input type="submit">
-    </form>
-    @if (session("status"))
-        <h3>{{ session("status") }}</h3>
-    @endif
+        <div class="user-box">
+          <input type="text" name="username" required="">
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input type="password" name="password" required="">
+          <label>Password</label>
+        </div>
+        <div class="ks-cboxtags float-left">
+            <input type="checkbox" id="rememberme" name="rememberMe" value="Order Two">
+            <label for="rememberme">Remember Me</label>
+        </div>
+          <div style="margin-bottom:15px !important">
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span> <input style="display:none !important" type="submit" id="submit"> <label for="submit">Submit</label>
+        </a>
+          </div>
+
+      </form>
+      @if (session("status"))
+      <h3 class="text-white" style="z-index: 100 !important">{{ session("status") }}
+      </h3>
+  @endif
+    </div>
+    </div>
+
 @endsection

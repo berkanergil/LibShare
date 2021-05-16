@@ -3,6 +3,7 @@
 use App\Http\Controllers\user\AddCardController;
 use App\Http\Controllers\user\BookController;
 use App\Http\Controllers\user\BooksController;
+use App\Http\Controllers\user\LibBasketController;
 use App\Http\Controllers\user\LoginController;
 use App\Http\Controllers\user\LogoutController;
 use App\Http\Controllers\user\RegisterController;
@@ -32,8 +33,7 @@ Route::prefix("user")->group(function (){
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
         
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
-
-        Route::post('/book/store/{book:title}', [BookController::class,"store"])->name($name_prefix."store");
+        Route::post('/book/store', [BookController::class,"store"])->name($name_prefix."book_store");
 
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
     });

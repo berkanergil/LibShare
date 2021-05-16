@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.librarian')
 
 @section('content')
     <h1>BOOKS</h1>

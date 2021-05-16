@@ -21,6 +21,8 @@ class Book extends Model
         "stock_number"
     ];
 
+    public $timestamps = true;
+
     public function stockedBooks(){
         return $this->hasMany(StockedBook::class);
     }
