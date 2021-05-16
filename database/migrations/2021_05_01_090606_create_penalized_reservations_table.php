@@ -19,7 +19,7 @@ class CreatePenalizedReservationsTable extends Migration
             $table->foreign('reserved_book_id')->references('id')->on('reserved_books')->onDelete("cascade");
             $table->integer("amount");
             $table->integer("penalized_date_number");
-            $table->boolean("pay_status");
+            $table->boolean("pay_status")->default(0);
             $table->timestamps();
         });
     }

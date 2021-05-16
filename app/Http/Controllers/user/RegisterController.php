@@ -17,7 +17,7 @@ class RegisterController extends Controller
         $this->validate($request,[
             "username" =>"required|max:255",
             "email" =>"required|email|max:255",
-            "password" =>"required|confirmed",
+            "password" =>"required|confirmed|min:5",
         ]);
 
         if (!User::where('username', '=', $request->username)->exists()) {

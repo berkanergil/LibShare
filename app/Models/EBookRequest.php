@@ -5,25 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SavedBook extends Model
+class EBookRequest extends Model
 {
     use HasFactory;
 
     protected $fillable =[
         "user_id",
-        "stocked_book_id",
+        "category_id",
+        "title",
+        "author",
+        "publish_date",
+        "language",
+        "description",
+        "image"
     ];
-
-    public function stockedBook(){
-        return $this->belongsTo(StockedBook::class);
-    }
 
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-    public function reservedBook(){
-        return $this->hasOne(ReservedBook::class);
+    public function e_book(){
+        return $this->hasOne(EBook::class);
     }
-
 }

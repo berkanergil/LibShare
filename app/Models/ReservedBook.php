@@ -9,11 +9,17 @@ class ReservedBook extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        "saved_book_id",
+        "start_date",
+        "end_date"
+    ];
+
     public function savedBook(){
         return $this->belongsTo(SavedBook::class);
     }
 
     public function penalizedReservation(){
-        return $this->belongsTo(PenalizedReservation::class);
+        return $this->hasOne(PenalizedReservation::class);
     }
 }

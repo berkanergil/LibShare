@@ -33,5 +33,7 @@ Route::prefix("user")->group(function (){
         
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
 
+        Route::post('/book/store/{book:title}', [BookController::class,"store"])->name($name_prefix."store");
+
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
     });

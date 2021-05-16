@@ -9,11 +9,18 @@ class PenalizedReservation extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        "reservation_id",
+        "amount",
+        "expired_date_number",
+        "pay_status"
+    ];
+
     public function reservedBook(){
-        return $this->hasOne(ReservedBook::class);
+        return $this->belongsTo(ReservedBook::class);
     }
 
     public function bill(){
-        return $this->belongsTo(Bill::class);
+        return $this->hasOne(Bill::class);
     }
 }

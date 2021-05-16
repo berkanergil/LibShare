@@ -18,6 +18,14 @@ class Category extends Model
         return $this->hasMany(Book::class);
     }
 
+    public function e_books(){
+        return $this->hasMany(EBook::class);
+    }
+
+    public function e_book_requests(){
+        return $this->hasMany(EBookRequest::class);
+    }
+
     public function manager(){
         return $this->belongsTo(Manager::class);
     }

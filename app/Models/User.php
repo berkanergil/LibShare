@@ -44,10 +44,14 @@ class User extends Authenticatable
 
 
     public function card(){
-        return $this->belongsTo(Card::class);
+        return $this->hasOne(Card::class);
     }
 
     public function savedBooks(){
         return $this->hasMany(SavedBook::class);
+    }
+    
+    public function e_book_requests(){
+        return $this->hasMany(EBookRequest::class);
     }
 }

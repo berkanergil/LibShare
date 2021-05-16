@@ -9,11 +9,17 @@ class Bill extends Model
 {
     use HasFactory;
 
+    protected $fillable =[
+        "penalized_reservation_id",
+        "card_id",
+        "amount"
+    ];
+
     public function penalizedReservation(){
-        return $this->hasOne(PenalizedReservation::class);
+        return $this->belongsTo(PenalizedReservation::class);
     }
 
     public function card(){
-        return $this->hasOne(Card::class);
+        return $this->belongsTo(Card::class);
     }
 }
