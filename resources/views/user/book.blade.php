@@ -13,7 +13,7 @@
         @if (session("success"))
         {{ session("success") }}
         @endif
-        @if(!$stocked_book->savedBooks()->where("user_id","=",Auth::user()->id)->first())
+        @if(!$saved_status)
             <form action="{{route("user_book_store")}}" method="post">
                 @csrf
                 <input type="hidden" name="stocked_book_id" value="{{ $stocked_book->id }}">

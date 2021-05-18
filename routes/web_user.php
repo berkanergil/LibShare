@@ -7,9 +7,11 @@ use App\Http\Controllers\user\LibBasketController;
 use App\Http\Controllers\user\LoginController;
 use App\Http\Controllers\user\LogoutController;
 use App\Http\Controllers\user\RegisterController;
+use App\Http\Controllers\user\ReserveBookController;
 use App\Http\Controllers\user\SettingsController;
 use App\Http\Controllers\user\UserController;
 use App\Models\Book;
+use App\Models\ReservedBook;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +33,11 @@ Route::prefix("user")->group(function (){
         Route::get('/settings', [SettingsController::class,"index"])->name($name_prefix."settings");
 
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
+
+        Route::get('/libbasket', [LibBasketController::class,"index"])->name($name_prefix."libbasket");
+
+        Route::get('/reservebook/{book:saved_book_id}', [ReserveBookController::class,"index"])->name($name_prefix."reservebook");
+        Route::post('/reservebook', [ReserveBookController::class,"store"])->name($name_prefix."reservebook_store");
         
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
         Route::post('/book/store', [BookController::class,"store"])->name($name_prefix."book_store");

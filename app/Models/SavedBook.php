@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class SavedBook extends Model
 {
@@ -12,6 +13,7 @@ class SavedBook extends Model
     protected $fillable =[
         "user_id",
         "stocked_book_id",
+        "reserve_status"
     ];
 
     public function stockedBook(){
@@ -26,4 +28,23 @@ class SavedBook extends Model
         return $this->hasOne(ReservedBook::class);
     }
 
+    public static function savedBooksWithAtt(){
+        $books=User::find(Auth::user()->id)->savedBooks()
+        ->join("stocked_books","stocked_books.id","=","saved_books.stocked_book_id")
+        ->join("books","books.id","=","stocked_books.book_id")
+        ->select("saved_books.id as saved_book_id","books.id as book_id","stocked_books.id as stocked_book_id","books.*")
+        ->where("saved_books.reserve_status","=","0")
+        ->paginate(2);
+        return $books;
+    }
+
+    public static function savedBookWithAtt(String $saved_book_id){
+        $book=User::find(Auth::user()->id)->savedBooks()
+        ->join("stocked_books","stocked_books.id","=","saved_books.stocked_book_id")
+        ->join("books","books.id","=","stocked_books.book_id")
+        ->select("saved_books.id as saved_book_id","books.id as book_id","stocked_books.id as stocked_book_id","books.*","stocked_books.*")
+        ->where("saved_books.id","=",$saved_book_id)
+        ->first();
+        return $book;
+    }
 }
