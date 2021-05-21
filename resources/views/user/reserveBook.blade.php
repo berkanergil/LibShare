@@ -5,7 +5,7 @@
 <h1>RESERVE BOOK</h1>
     <div>
         <h3>{{ $book->title }}</h3>
-        <img src="{{url('/images/'.$book->image)}}" alt="" width="300" height="500">
+        <img src="{{url('/images/books/'.$book->image)}}" alt="" width="300" height="500">
         <p>{{ $book->description }}</p>
         <p>Available Date: {{ $book->available_date }}</p>
     </div>

@@ -7,6 +7,10 @@
     <br>
     <a href="{{ route("user_libbasket") }}">libBasket</a>
     <br>
+    <a href="{{ route("user_reservedbooks") }}">reservedBooks</a>
+    <br>
+    <a href="{{ route("user_addEBookRequest") }}">addEBookDonation</a>
+    <br>
     <a href="{{ route("user_settings") }}">settings</a>
     <br>
     <a href="{{ route("user_logout") }}">logout</a>

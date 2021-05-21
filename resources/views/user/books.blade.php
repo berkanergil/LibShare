@@ -8,7 +8,7 @@
         <a href="{{route("user_book",$book)}}">
             <div>
                 <h3>{{ $book->title }}</h3>
-                <img src="{{url('/images/'.$book->image)}}" alt="" width="300" height="500">
+                <img src="{{url('/images/books/'.$book->image)}}" alt="" width="300" height="500">
             </div>
         </a>
         @endforeach

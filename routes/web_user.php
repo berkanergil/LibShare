@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\user\AddCardController;
+use App\Http\Controllers\user\AddEBookRequestController;
 use App\Http\Controllers\user\BookController;
 use App\Http\Controllers\user\BooksController;
 use App\Http\Controllers\user\LibBasketController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\user\LoginController;
 use App\Http\Controllers\user\LogoutController;
 use App\Http\Controllers\user\RegisterController;
 use App\Http\Controllers\user\ReserveBookController;
+use App\Http\Controllers\user\ReservedBooksController;
 use App\Http\Controllers\user\SettingsController;
 use App\Http\Controllers\user\UserController;
 use App\Models\Book;
@@ -38,6 +40,11 @@ Route::prefix("user")->group(function (){
 
         Route::get('/reservebook/{book:saved_book_id}', [ReserveBookController::class,"index"])->name($name_prefix."reservebook");
         Route::post('/reservebook', [ReserveBookController::class,"store"])->name($name_prefix."reservebook_store");
+
+        Route::get("/reservedbooks",[ReservedBooksController::class,"index"])->name($name_prefix."reservedbooks");
+
+        Route::get("/addEBookDonation",[AddEBookRequestController::class,"index"])->name($name_prefix."addEBookRequest");
+        Route::post("/addEBookDonation",[AddEBookRequestController::class,"store"]);
         
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
         Route::post('/book/store', [BookController::class,"store"])->name($name_prefix."book_store");

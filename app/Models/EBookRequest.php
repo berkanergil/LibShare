@@ -17,7 +17,8 @@ class EBookRequest extends Model
         "publish_date",
         "language",
         "description",
-        "image"
+        "image",
+        "file"
     ];
 
     public function user(){

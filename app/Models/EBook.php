@@ -18,7 +18,8 @@ class EBook extends Model
         "publish_date",
         "language",
         "description",
-        "image"
+        "image",
+        "file"
     ];
 
     public function e_book_request(){
