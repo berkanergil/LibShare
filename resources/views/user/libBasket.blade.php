@@ -5,7 +5,7 @@
     <br>
     @if ($books->count())
         @foreach ($books as $book) 
-        <a href="{{route("user_reservebook",$book)}}">
+        <a href="{{route("user_reservebook",$book )}}">
             <div>
                 <h3>{{ $book->title }}</h3>
                 <img src="{{url('/images/books/'.$book->image)}}" alt="" width="300" height="500">

@@ -3,5 +3,13 @@
 @section('content')
     <h1>SETTINGS</h1>
     <br>
-    <a href="{{ route("user_addCard") }}">add card</a>
+    @if (isset($card))
+        <a href="{{ route("user_addCard") }}">add card</a>
+        <br>
+    @else
+        <a href="{{ route("user_addCard") }}">add card</a>
+        <br>
+    @endif
+    
+    <a href="{{ route("user_updateUser") }}">update profile</a>
 @endsection

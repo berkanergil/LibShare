@@ -1,11 +1,10 @@
 @extends('layouts.user')
 
 @section('content')
-    <h1>ADD CARD</h1>
-
+    <h1>UPDATE CARD</h1>
         <form action="{{ route("user_addCard") }}" method="POST">
                 @csrf
-                <input type="text" name="name" placeholder="name" value="{{ $card->name }}">
+                <input type="text" name="name" placeholder="name" value="{{ old("name") }}">
                 <br>
                 @error('title')
                         {{ $message }}

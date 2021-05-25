@@ -2,10 +2,12 @@
 
 @section('content')
     <h1>ADD CARD</h1>
-
-        <form action="{{ route("user_addCard") }}" method="POST">
+        <form action="{{ route("user_register_card") }}" method="POST">
                 @csrf
-                <input type="text" name="name" placeholder="name" value="{{ $card->name }}">
+                {{-- @foreach ($request as $item=>$value)
+                <input type="hidden" name="{{ $item }}" value="{{ $value }}">
+                @endforeach --}}
+                <input type="text" name="name" placeholder="name" value="{{ old("name")  }}">
                 <br>
                 @error('title')
                         {{ $message }}

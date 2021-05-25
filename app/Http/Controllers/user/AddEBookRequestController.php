@@ -36,7 +36,6 @@ class AddEBookRequestController extends Controller
         $fileName = time().'.'.$request->file->extension();  
         $request->file->move(public_path('pdfs/ebook_requests'), $fileName);
 
-
         if(!EBookRequest::where("title","=",$request->title)->exists()){
             EBookRequest::create([
                 "user_id"=>Auth::user()->id,
