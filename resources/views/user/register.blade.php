@@ -10,20 +10,12 @@
                     {{ $message }}
                     <br>
             @enderror
-            @if (session("error_username"))
-                {{ session("error_username") }}
-                <br>
-            @endif
             <input type="text" name="email" placeholder="email" value="{{ old("email") }}">
             <br>
             @error('email')
                     {{ $message }}
                     <br>
             @enderror
-            @if (session("error_email"))
-                {{ session("error_email") }}
-                <br>
-            @endif
             <input type="text" name="password" placeholder="password">
             <br>
             <input type="text" name="password_confirmation" placeholder="password_confirmation">
@@ -36,7 +28,7 @@
             <br>
             <input type="text" name="name" placeholder="name" value="{{ old("name")  }}">
                 <br>
-                @error('title')
+                @error('name')
                         {{ $message }}
                         <br>
                 @enderror
@@ -46,9 +38,6 @@
                         {{ $message }}
                         <br>
                 @enderror
-                @if (session("error_number"))
-                    {{ session("error_number") }}
-                @endif
                 <input type="date" name="expired_date" placeholder="expired_date" value="{{ old("expired_date") }}">
                 <br>
                 @error('expired_date')

@@ -23,7 +23,7 @@ class RegisterController extends Controller
             "email" =>"required|email|max:255|unique:users,email",
             "password" =>"required|confirmed|min:5",
             "name" =>"required|max:255|unique:cards,name",
-            "number" =>"required|digits:16",
+            "number" =>"required|digits:16|unique:cards,number",
             "expired_date" =>"required|date|after:".$two_days_from_now,
             "cvc_number"=>"required|digits:3"
         ]);

@@ -7,5 +7,7 @@
     <br>
     <a href="{{ route("librarian_books") }}">show books</a>
     <br>
+    <a href="{{ route("librarian_ebookRequests") }}">show ebook requests</a>
+    <br>
     <a href="{{ route("librarian_logout") }}">logout</a>
 @endsection

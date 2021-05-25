@@ -18,6 +18,7 @@ class EBookRequest extends Model
         "language",
         "description",
         "image",
+        "accept_status",
         "file"
     ];
 
