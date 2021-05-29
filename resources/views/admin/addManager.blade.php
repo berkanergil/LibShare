@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<section style="min-height: 150vh;">
+{{-- <section style="min-height: 150vh;">
     <div style="background: transparent!important;" class="mt-0">
         <div uk-height-viewport="offset-top: true; offset-bottom: true" >
             <div uk-grid uk-height-viewport="expand: true">
@@ -291,8 +291,7 @@
             </div>
         </div>
     </div>
-</section>
-
+</section> --}}
 
 <h1>ADD MANAGER</h1>
 <form action="{{ route("admin_addManager") }}" method="POST">

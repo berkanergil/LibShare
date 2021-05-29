@@ -5,6 +5,8 @@
     <br>
     <a href="{{ route("user_books") }}">books</a>
     <br>
+    <a href="{{ route("user_ebooks") }}">ebooks</a>
+    <br>
     <a href="{{ route("user_libbasket") }}">libBasket</a>
     <br>
     <a href="{{ route("user_reservedbooks") }}">reservedBooks</a>

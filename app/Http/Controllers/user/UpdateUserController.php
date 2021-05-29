@@ -25,30 +25,29 @@ class UpdateUserController extends Controller
         ]);
 
         if(Hash::check($request->old_password,Auth::user()->password)){
+            if (!User::where('username', '=', $request->username)
+            ->where("username","!=",Auth::user()->username)
+            ->exists()) {
+                if(!User::where('email', '=', $request->email)
+                ->where("email","!=",Auth::user()->email)
+                ->exists()){
+                    User::find(Auth::user()->id)
+                    ->update([
+                        "username"=>$request->username,
+                        "email"=>$request->email,
+                        "password"=>Hash::make($request->password),
+                    ]);
+                    return back()->with("success","User informations updated.");
+                }else{
+                    return back()->with("error_email","This email is already exists.");
+                }
+             }else{
+                return back()->with("error_username","This username is already exists.");
+             }
             
         }else{
             return back()->with("old_password","Password is incorrect");
         }
-
-        if (!User::where('username', '=', $request->username)
-        ->where("username","!=",Auth::user()->username)
-        ->exists()) {
-            if(!User::where('email', '=', $request->email)
-            ->where("email","!=",Auth::user()->email)
-            ->exists()){
-                User::find(Auth::user()->id)
-                ->update([
-                    "username"=>$request->username,
-                    "email"=>$request->email,
-                    "password"=>Hash::make($request->password),
-                ]);
-                return back()->with("success","User informations updated.");
-            }else{
-                return back()->with("error_email","This email is already exists.");
-            }
-         }else{
-            return back()->with("error_username","This username is already exists.");
-         }
     }
     
 }

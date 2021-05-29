@@ -34,7 +34,7 @@ class AddBookController extends Controller
 
         $imageName = time().'.'.$request->image->extension();  
      
-        $request->image->move(public_path('images'), $imageName);
+        $request->image->move(public_path('images/books/'), $imageName);
 
         if(!Book::where("title","=",$request->title)->exists()){
             Book::create([

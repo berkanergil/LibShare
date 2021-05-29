@@ -3,12 +3,15 @@
 use App\Http\Controllers\librarian\AddBookController;
 use App\Http\Controllers\librarian\BookController;
 use App\Http\Controllers\librarian\BooksController;
+use App\Http\Controllers\librarian\EBookController;
 use App\Http\Controllers\librarian\EBookRequestController;
 use App\Http\Controllers\librarian\EBookRequestsController;
+use App\Http\Controllers\librarian\EBooksController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\librarian\LoginController;
 use App\Http\Controllers\librarian\LibrarianController;
+use App\Http\Controllers\librarian\LibrariansController;
 use App\Http\Controllers\librarian\LogoutController;
 use App\Models\EBookRequest;
 
@@ -33,6 +36,14 @@ Route::prefix("librarian")->group(function (){
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
+
+        Route::get('/ebooks', [EBooksController::class,"index"])->name($name_prefix."ebooks");
+
+        Route::get('/ebook/{book:title}', [EBookController::class,"index"])->name($name_prefix."ebook");
+
+        Route::get('/librarians', [LibrariansController::class,"index"])->name($name_prefix."librarians");
+
+        Route::get('/librarian/{librarian}', [LibrarianController::class,"get"])->name($name_prefix."librarian");
 
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
     });

@@ -3,6 +3,8 @@
 use App\Http\Controllers\user\AddEBookRequestController;
 use App\Http\Controllers\user\BookController;
 use App\Http\Controllers\user\BooksController;
+use App\Http\Controllers\user\EBookController;
+use App\Http\Controllers\user\EBooksController;
 use App\Http\Controllers\user\LibBasketController;
 use App\Http\Controllers\user\LoginController;
 use App\Http\Controllers\user\LogoutController;
@@ -13,9 +15,6 @@ use App\Http\Controllers\user\SettingsController;
 use App\Http\Controllers\user\UpdateUserController;
 use App\Http\Controllers\user\UpdateCardController;
 use App\Http\Controllers\user\UserController;
-use App\Models\Book;
-use App\Models\ReservedBook;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix("user")->group(function (){
@@ -52,6 +51,10 @@ Route::prefix("user")->group(function (){
         
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
         Route::post('/book/store', [BookController::class,"store"])->name($name_prefix."book_store");
+
+        Route::get('/ebooks',[EBooksController::class,"index"])->name($name_prefix."ebooks");
+
+        Route::get('/ebook/{book:title}',[EBookController::class,"index"])->name($name_prefix."ebook");
 
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
     });

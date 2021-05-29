@@ -1,16 +1,21 @@
 <?php
 
-use App\Http\Controllers\manager\AddCategoryController;
-use App\Http\Controllers\manager\LibrarianController;
-use App\Http\Controllers\manager\AddLibrarianController;
-use App\Http\Controllers\manager\CategoriesController;
-use App\Http\Controllers\manager\CategoryController;
-use App\Http\Controllers\manager\LibrariansController;
-use App\Http\Controllers\manager\LoginController;
-use App\Http\Controllers\manager\LogoutController;
-use App\Http\Controllers\manager\ManagerController;
+use App\Http\Controllers\manager\ManagersController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\manager\BookController;
+use App\Http\Controllers\manager\BooksController;
+use App\Http\Controllers\manager\EBookController;
+use App\Http\Controllers\manager\LoginController;
+use App\Http\Controllers\manager\EBooksController;
+use App\Http\Controllers\manager\LogoutController;
+use App\Http\Controllers\manager\ManagerController;
+use App\Http\Controllers\manager\CategoryController;
+use App\Http\Controllers\manager\LibrarianController;
+use App\Http\Controllers\manager\CategoriesController;
+use App\Http\Controllers\manager\LibrariansController;
+use App\Http\Controllers\manager\AddCategoryController;
+use App\Http\Controllers\manager\AddLibrarianController;
 
 Route::prefix("manager")->group(function (){
 
@@ -25,7 +30,8 @@ Route::prefix("manager")->group(function (){
 
         Route::get('/librarians', [LibrariansController::class,"index"])->name($name_prefix."librarians");
 
-        Route::get('/librarian/{librarian:username}', [LibrarianController::class,"index"])->name($name_prefix."librarian");
+        Route::get('/librarian/{librarian}', [LibrarianController::class,"index"])->name($name_prefix."librarian");
+        Route::post('/librarian', [LibrarianController::class,"store"])->name($name_prefix."update_librarian");
 
         Route::get('/addLibrarian', [AddLibrarianController::class,"index"])->name($name_prefix."addLibrarian");
         Route::post('/addLibrarian', [AddLibrarianController::class,"store"]);
@@ -35,6 +41,18 @@ Route::prefix("manager")->group(function (){
 
         Route::get('/categories',[CategoriesController::class,"index"])->name($name_prefix."categories");
 
-        Route::get('/category/{category:title}',[CategoryController::class,"index"])->name($name_prefix."category");
+        Route::get('/category/{category}',[CategoryController::class,"index"])->name($name_prefix."category");
+        Route::post('/category',[CategoryController::class,"store"])->name($name_prefix."update_category");
+        
+        Route::get('/ebooks',[EBooksController::class,"index"])->name($name_prefix."ebooks");
+
+        Route::get('/ebook/{book:title}',[EBookController::class,"index"])->name($name_prefix."ebook");
+
+        Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
+
+        Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
+
+        Route::get("/managers",[ManagersController::class,"index"])->name($name_prefix."managers");
+        Route::get("/managers/{manager}",[ManagerController::class,"get"])->name($name_prefix."manager");
 
     });

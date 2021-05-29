@@ -5,6 +5,14 @@
     <br>
     <a href="{{ route("admin_managers") }}">show managers</a>
     <br>
+    <a href="{{ route("admin_librarians") }}">show librarians</a>
+    <br>
+    <a href="{{ route("admin_users") }}">show users</a>
+    <br>
+    <a href="{{ route("admin_books") }}">show books</a>
+    <br>
+    <a href="{{ route("admin_ebooks") }}">show ebooks</a>
+    <br>
     <a href="{{ route("admin_addManager") }}">add manager</a>
     <br>
     <a href="{{ route("admin_logout") }}">logout</a>
