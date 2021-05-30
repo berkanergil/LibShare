@@ -1,16 +1,18 @@
 <?php
 
-use App\Http\Controllers\manager\ManagersController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\manager\BookController;
+use App\Http\Controllers\manager\UserController;
 use App\Http\Controllers\manager\BooksController;
 use App\Http\Controllers\manager\EBookController;
 use App\Http\Controllers\manager\LoginController;
+use App\Http\Controllers\manager\UsersController;
 use App\Http\Controllers\manager\EBooksController;
 use App\Http\Controllers\manager\LogoutController;
 use App\Http\Controllers\manager\ManagerController;
 use App\Http\Controllers\manager\CategoryController;
+use App\Http\Controllers\manager\ManagersController;
 use App\Http\Controllers\manager\LibrarianController;
 use App\Http\Controllers\manager\CategoriesController;
 use App\Http\Controllers\manager\LibrariansController;
@@ -51,6 +53,10 @@ Route::prefix("manager")->group(function (){
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
+
+        Route::get('/users', [UsersController::class,"index"])->name($name_prefix."users");
+
+        Route::get('/user/{user:username}', [UserController::class,"index"])->name($name_prefix."user");
 
         Route::get("/managers",[ManagersController::class,"index"])->name($name_prefix."managers");
         Route::get("/managers/{manager}",[ManagerController::class,"get"])->name($name_prefix."manager");
