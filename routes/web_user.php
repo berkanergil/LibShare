@@ -22,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("user")->group(function(){
     Route::get('/login', [LoginController::class,"index"])->name("user_login");
-    Route::post('/login', [LoginController::class,"store"]);    
+    Route::post('/login', [LoginController::class,"store"]);
+    Route::get('/register', [RegisterController::class,"index"])->name("user_register");
+    Route::post('/register', [RegisterController::class,"store"]);    
 });
 
 
@@ -34,10 +36,6 @@ Route::prefix("user")->group(function (){
     $name_prefix="user_";
 
     Route::get('/dashboard', [UserController::class,"index"])->name($name_prefix."dashboard");
-
-
-    Route::get('/register', [RegisterController::class,"index"])->name($name_prefix."register");
-    Route::post('/register', [RegisterController::class,"store"]);
 
     Route::get('/settings', [SettingsController::class,"index"])->name($name_prefix."settings");
 
