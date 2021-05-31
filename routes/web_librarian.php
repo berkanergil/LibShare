@@ -17,14 +17,19 @@ use App\Http\Controllers\librarian\LibrariansController;
 use App\Http\Controllers\librarian\EBookRequestController;
 use App\Http\Controllers\librarian\EBookRequestsController;
 
-Route::prefix("librarian")->group(function (){
+
+
+Route::prefix("librarian")->group(function(){
+    Route::get('/login', [LoginController::class,"index"])->name("librarian_login");
+    Route::post('/login', [LoginController::class,"store"]);    
+});
+
+Route::group(["middleware"=>"librarianAuth"],function () {
+    Route::prefix("librarian")->group(function (){
 
         $name_prefix="librarian_";
 
         Route::get('/dashboard', [LibrarianController::class,"index"])->name($name_prefix."dashboard");
-
-        Route::get('/login', [LoginController::class,"index"])->name($name_prefix."login");
-        Route::post('/login', [LoginController::class,"store"]);
 
         Route::get('/addBook', [AddBookController::class,"index"])->name($name_prefix."addBook"); 
         Route::post('/addBook', [AddBookController::class,"store"]);
@@ -53,3 +58,5 @@ Route::prefix("librarian")->group(function (){
 
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
     });
+});
+

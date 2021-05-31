@@ -19,14 +19,19 @@ use App\Http\Controllers\manager\LibrariansController;
 use App\Http\Controllers\manager\AddCategoryController;
 use App\Http\Controllers\manager\AddLibrarianController;
 
-Route::prefix("manager")->group(function (){
+Route::prefix("manager")->group(function(){
+    Route::get('/login', [LoginController::class,"index"])->name("manager_login");
+    Route::post('/login', [LoginController::class,"store"]);    
+});
 
+
+Route::group(["middleware"=>"managerAuth"],function () {
+    Route::prefix("manager")->group(function (){
         $name_prefix="manager_";
 
         Route::get('/dashboard', [ManagerController::class,"index"])->name($name_prefix."dashboard");
 
-        Route::get('/login', [LoginController::class,"index"])->name($name_prefix."login");
-        Route::post('/login', [LoginController::class,"store"]);
+
 
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
 
@@ -62,3 +67,4 @@ Route::prefix("manager")->group(function (){
         Route::get("/managers/{manager}",[ManagerController::class,"get"])->name($name_prefix."manager");
 
     });
+});

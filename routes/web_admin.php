@@ -18,10 +18,17 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\UsersController;
 use App\Models\Librarian;
 
-Route::prefix("admin")->group(function (){
 
+Route::prefix("admin")->group(function(){
+    Route::get('/login', [LoginController::class,"index"])->name("admin_login");
+    Route::post('/login', [LoginController::class,"store"]);    
+});
+
+
+
+Route::group(["middleware"=>"adminAuth"],function(){
+    Route::prefix("admin")->group(function (){
         $name_prefix="admin_";
-
         Route::get('/dashboard', [AdminController::class,"index"])->name($name_prefix."dashboard");
 
         Route::get('/addManager', [AddManagerController::class,"index"])->name($name_prefix."addManager");
@@ -40,9 +47,6 @@ Route::prefix("admin")->group(function (){
 
         Route::get('/user/{user:username}', [UserController::class,"index"])->name($name_prefix."user");
 
-        Route::get('/login', [LoginController::class,"index"])->name($name_prefix."login");
-        Route::post('/login', [LoginController::class,"store"]);
-
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
 
         Route::get('/ebooks',[EBooksController::class,"index"])->name($name_prefix."ebooks");
@@ -52,4 +56,6 @@ Route::prefix("admin")->group(function (){
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
-    });
+    }); 
+});
+
