@@ -49,10 +49,10 @@
             @enderror
             <label for="language">language:</label>
             <select class="form-control" name="language" id="language" value="{{ old("language") }}">
-                    <option value="en"> 
+                    <option value="english"> 
                         english
                     </option>
-                    <option value="tr"> 
+                    <option value="turkish"> 
                         turkish
                     </option>
             </select>
