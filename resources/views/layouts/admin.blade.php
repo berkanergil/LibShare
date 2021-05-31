@@ -18,7 +18,7 @@
     <title>Libshare | Admin</title>
 </head>
 <body>
-    @if (!is_null(Auth::guard("admin")->user()))
+    {{-- @if (!is_null(Auth::guard("admin")->user()))
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark "
         style="background: #101F2E !important ; backdrop-filter: blur(1px); font-weight: 600;">
         <a class="navbar-brand ml-3" href="#" >Libshare | Administration</a>
@@ -46,7 +46,7 @@
             </ul>
         </div>
         </nav>
-    @endif
+    @endif --}}
     @yield("content")
 </body>
     <script src="{{ asset("js/generate_key.js") }}" type="text/javascript"></script>

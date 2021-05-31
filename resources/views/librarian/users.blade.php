@@ -1,6 +1,7 @@
 @extends("layouts.librarian")
 
 @section('content')
+<x-librarian-nav-bar/>
     <h1>USERS</h1>
     <br>
     @if ($users->count())

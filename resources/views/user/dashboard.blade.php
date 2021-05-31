@@ -1,6 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
+<x-user-nav-bar/>
     <h1>DASHBOARD</h1>
     <br>
     <a href="{{ route("user_books") }}">books</a>

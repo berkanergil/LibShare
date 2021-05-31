@@ -1,6 +1,7 @@
 @extends('layouts.manager')
 
 @section('content')
+<x-manager-nav-bar/>
 <h1>CATEGORY</h1>
 @isset($category)
     <form action="{{ route("manager_update_category") }}" method="post">

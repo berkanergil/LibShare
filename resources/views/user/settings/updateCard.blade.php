@@ -1,6 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
+<x-user-nav-bar/>
     <h1>UPDATE CARD</h1>
         <form action="" method="POST">
                 @csrf

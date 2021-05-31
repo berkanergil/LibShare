@@ -1,6 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
+<x-user-nav-bar/>
     <h1>LIBBASKET</h1>
     <br>
     @if ($books->count())

@@ -1,6 +1,7 @@
 @extends('layouts.manager')
 
 @section('content')
+<x-manager-nav-bar/>
 <h1>LIBRARIAN</h1>
 @isset($librarian)
 <form action="{{ route("manager_update_librarian") }}" method="post">

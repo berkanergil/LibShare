@@ -1,6 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
+<x-user-nav-bar/>
     <h1>ADD EBOOK DONATION</h1>
         <form action="{{ route("user_addEBookRequest") }}" method="POST" enctype="multipart/form-data">
             @csrf

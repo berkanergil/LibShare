@@ -1,6 +1,7 @@
 @extends('layouts.manager')
 
 @section('content')
+<x-manager-nav-bar/>
     <h1>DASHBOARD</h1>
     <br>
     <a href="{{ route("manager_librarians") }}">show librarians</a>

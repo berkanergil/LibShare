@@ -1,6 +1,7 @@
 @extends("layouts.admin")
 
 @section('content')
+<x-admin-nav-bar/>
     <h1>USERS</h1>
     <br>
     @if ($users->count())

@@ -3,6 +3,7 @@
 @section('content')
 
 <h1>RESERVE BOOK</h1>
+<x-user-nav-bar/>
     <div>
         <h3>{{ $book->title }}</h3>
         <img src="{{url('/images/books/'.$book->image)}}" alt="" width="300" height="500">

@@ -1,6 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
+<x-user-nav-bar/>
     <h1>USER UPDATE</h1>
         @if (isset($user))
         <form action="{{ route("user_updateUser") }}" method="POST">

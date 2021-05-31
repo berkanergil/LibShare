@@ -1,6 +1,7 @@
 @extends('layouts.manager')
 
 @section('content')
+<x-manager-nav-bar/>
     <h1>ADD CATEGORY</h1>
         <form action="{{ route("manager_addCategory") }}" method="POST">
                 @csrf

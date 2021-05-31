@@ -1,6 +1,7 @@
 @extends('layouts.librarian')
 
 @section('content')
+<x-librarian-nav-bar/>
     <h1>DASHBOARD</h1>
     <br>
     <a href="{{ route("librarian_addBook") }}">add book</a>

@@ -1,6 +1,7 @@
 @extends('layouts.manager')
 
 @section('content')
+<x-manager-nav-bar/>
 <h1>EBOOK</h1>
 @isset($book)
     <div>

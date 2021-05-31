@@ -10,6 +10,6 @@ class LogoutController extends Controller
 {
     public function store(){
         Auth::guard('librarian')->logout();
-        return view("welcome");
+        return view("librarian.login");
     }
 }

@@ -1,6 +1,7 @@
 @extends('layouts.librarian')
 
 @section('content')
+<x-librarian-nav-bar/>
 <h1>BOOK</h1>
 @isset($book)
     <div>

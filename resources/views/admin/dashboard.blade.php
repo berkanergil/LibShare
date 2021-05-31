@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+    <x-admin-nav-bar/>
     <h1>DASHBOARD</h1>
     <br>
     <a href="{{ route("admin_managers") }}">show managers</a>

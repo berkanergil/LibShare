@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+<x-admin-nav-bar/>
 {{-- <section style="min-height: 150vh;">
     <div style="background: transparent!important;" class="mt-0">
         <div uk-height-viewport="offset-top: true; offset-bottom: true" >

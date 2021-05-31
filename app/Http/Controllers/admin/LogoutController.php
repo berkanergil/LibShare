@@ -10,6 +10,6 @@ class LogoutController extends Controller
 {
     public function store(){
         Auth::guard('admin')->logout();
-        return view("welcome");
+        return view("admin.login");
     }
 }

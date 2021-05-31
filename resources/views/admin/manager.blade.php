@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+<x-admin-nav-bar/>
 <h1>MANAGER</h1>
 @isset($manager)
 <form action="{{ route("admin_update_manager") }}" method="post">

@@ -1,6 +1,7 @@
 @extends('layouts.librarian')
 
 @section('content')
+<x-librarian-nav-bar/>
     <h1>EBOOKS</h1>
     <br>
     @if ($books->count())

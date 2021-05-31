@@ -1,6 +1,7 @@
 @extends('layouts.librarian')
 
 @section('content')
+<x-librarian-nav-bar/>
     <h1>ADD BOOK</h1>
         <form action="{{ route("librarian_addBook") }}" method="POST" enctype="multipart/form-data">
             @csrf
