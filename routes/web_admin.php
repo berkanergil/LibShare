@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\ManagersController;
 use App\Http\Controllers\admin\AddManagerController;
 use App\Http\Controllers\admin\LibrarianController;
 use App\Http\Controllers\admin\LibrariansController;
+use App\Http\Controllers\admin\UpdateAdminController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\UsersController;
 use App\Models\Librarian;
@@ -33,6 +34,9 @@ Route::group(["middleware"=>"adminAuth"],function(){
 
         Route::get('/addManager', [AddManagerController::class,"index"])->name($name_prefix."addManager");
         Route::post('/addManager', [AddManagerController::class,"store"]);
+
+        Route::get('/updateAdmin', [UpdateAdminController::class,"index"])->name($name_prefix."updateAdmin");
+        Route::post('/updateAdmin', [UpdateAdminController::class,"store"]);
 
         Route::get('/managers', [ManagersController::class,"index"])->name($name_prefix."managers");
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,22 @@
     @yield("content")
 </body>
 <script src="{{ asset("js/generate_key.js") }}" type="text/javascript"></script>
+<script>
+    var $table = $('#table-manager');
+    $(function () {
+        $('#toolbar').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+    var trBoldBlue = $("table");
+
+    $(trBoldBlue).on("click", "tr", function (){
+        $(this).toggleClass("bold-blue");
+    });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js%22%3E"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit.min.js%22%3E"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit-icons.min.js%22%3E"></script>

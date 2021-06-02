@@ -18,6 +18,7 @@ use App\Http\Controllers\manager\CategoriesController;
 use App\Http\Controllers\manager\LibrariansController;
 use App\Http\Controllers\manager\AddCategoryController;
 use App\Http\Controllers\manager\AddLibrarianController;
+use App\Http\Controllers\manager\UpdateManagerController;
 
 Route::prefix("manager")->group(function(){
     Route::get('/login', [LoginController::class,"index"])->name("manager_login");
@@ -45,6 +46,9 @@ Route::group(["middleware"=>"managerAuth"],function () {
 
         Route::get('/addCategory', [AddCategoryController::class,"index"])->name($name_prefix."addCategory");
         Route::post('/addCategory', [AddCategoryController::class,"store"]);
+
+        Route::get('/updateManager', [UpdateManagerController::class,"index"])->name($name_prefix."updateManager");
+        Route::post('/updateManager', [UpdateManagerController::class,"store"]);
 
         Route::get('/categories',[CategoriesController::class,"index"])->name($name_prefix."categories");
 

@@ -10,21 +10,21 @@
        <ul class="navbar-nav ml-auto text-center text-uppercase">
            <li class="nav-item active expand mr-5">
                <a style="font-size: 15px" class="middle nav-link"
-                  href="../Books/Books.html">Books
+                  href="{{ route("admin_books") }}">Books
                    <span class="sr-only">(current)</span></a>
            </li>
            <li  class="nav-item mr-5">
-               <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="../Manager_Deployment/Manager_Deployment.html" >Manager Deployment</a>
+               <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("admin_addManager") }}" >Manager Deployment</a>
            </li>
            <li  class="nav-item mr-5">
-               <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="../Users/Users.html" >Users</a>
+               <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("admin_users") }}" >Users</a>
            </li>
            <li class="nav-item  dropdown" style="z-index: 100 !important;">
-               <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Name Surname</a>
+               <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::guard('admin')->user()->username }}</a>
                <span class="dropdown-menu" style="background-color: #18263A">
-                   <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="../Profile/Profile.html">My Account</a>
+                   <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="{{ route("admin_updateAdmin") }}">My Account</a>
                    <div class="dropdown-divider"></div>
-                   <a style="color: #FFFFFF;font-size: 10px;" class="dropdown-item " href="../../Login-Signup/Login_Admin/Login.html">Logout</a>
+                   <a style="color: #FFFFFF;font-size: 10px;" class="dropdown-item " href="{{ route("admin_logout") }}">Logout</a>
                </span>
            </li>
        </ul>
