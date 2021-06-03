@@ -17,6 +17,9 @@
             <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("librarian_addBook") }}" >Book Deployment</a>
         </li>
         <li  class="nav-item mr-5">
+            <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("librarian_ebookRequests") }}" >E-Book Donation</a>
+        </li>
+        <li  class="nav-item mr-5">
             <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("librarian_users") }}" >Users</a>
         </li>
         <li class="nav-item  dropdown" style="z-index: 100 !important;">

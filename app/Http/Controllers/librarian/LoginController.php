@@ -15,7 +15,7 @@ class LoginController extends Controller
         public function store(Request $request){
     
             if(Auth::guard('librarian')->attempt($request->only("username","password"))){
-                return redirect()->route("librarian_dashboard");
+                return redirect()->route("librarian_books");
             }
             return back()->with("status","credentials are not valid");
         }

@@ -15,7 +15,7 @@ class LoginController extends Controller
     public function store(Request $request){
 
         if(Auth::guard('manager')->attempt($request->only("username","password"))){
-            return redirect()->route("manager_dashboard");
+            return redirect()->route("manager_books");
         }
         return back()->with("status","credentials are not val id");
     }

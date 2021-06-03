@@ -28,10 +28,10 @@ class Book extends Model
     }
 
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class,"category_id","id");
     }
 
     public function librarian(){
-        return $this->belongsTo(Librarian::class);
+        return $this->belongsTo(Librarian::class,"librarian_id","id");
     }
 }

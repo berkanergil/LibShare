@@ -1,7 +1,11 @@
 @extends('layouts.librarian')
 
+@section('body_css')
+style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;min-height: 100vh;overflow-y: hidden"
+@endsection
 @section('content')
 <x-librarian-nav-bar/>
+
     <h1>EBOOK REQUESTS</h1>
     <br>
     @if ($books->count())

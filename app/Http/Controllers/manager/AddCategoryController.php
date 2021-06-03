@@ -15,15 +15,15 @@ class AddCategoryController extends Controller
 
     public function store(Request $request){
         $this->validate($request,[
-            "title"=>"required",
+            "title"=>"required", 
         ]);
 
-        if(!Category::where("title","=",$request->title)->exists()){
+        if(!Category::where("title","=",trim(strtolower($request->title)))->exists()){
             Category::create([
                 "manager_id"=>Auth::guard('manager')->user()->id,
                 "title"=>$request->title,
             ]);
-            return redirect()->route("manager_dashboard");
+            return back()->with("success","The Category Has Been Deployed");
         }else{
             return back()->with("error_title","This title is already exists.");
         }

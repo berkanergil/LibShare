@@ -1,0 +1,65 @@
+/*PROFILE SECTION*/
+select,input:hover{
+    border-color: #1E3E5B !important;
+    outline-color: #1E3E5B !important;
+}
+select,input:focus{
+    border-color: #1E3E5B !important;
+    outline-color: #1E3E5B !important;
+}
+
+.extra-outline input:hover{
+    border-color: #1E3E5B !important;
+    outline-color: #1E3E5B !important;
+}
+
+.extra-outline input:focus{
+    border-color: #1E3E5B !important;
+    outline-color: #1E3E5B !important;
+}
+.section label i:focus{
+    color: #1E3E5B !important;
+
+}
+.uk-button-success {
+    background-color: #8cc14c;
+    color: #fff;
+}
+.uk-button-success:focus,
+.uk-button-success:hover {
+    background-color: #8ec73b;
+    color: #fff;
+}
+.uk-container{
+    background: transparent !important;
+}
+
+
+.button-icon {
+    padding-left: 15px;
+    padding-right: 10px;
+    float: left;
+    padding-top: 10px;
+}
+.button-tab-icon {
+    padding-right: 15px;
+    float: left;
+}
+.car-info-sidebar {
+    border-left: 1px solid #fafafa;
+    background-color: transparent;
+}
+@media only screen and (max-width: 980px) {
+
+    .sidebar-car-info {
+        margin-right: -300px;
+        transition: all 0.15s ease-out;
+    }
+}
+
+@media (min-width: 280px){
+    body{
+        overflow-y: visible !important;
+    }
+}
+

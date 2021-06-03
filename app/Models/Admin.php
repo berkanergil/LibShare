@@ -15,6 +15,16 @@ class Admin extends Authenticatable
     protected $table = 'admins';
     protected $guarded = array();
 
+    protected $fillable = [
+        "phone_number",
+        'name',
+        'surname',
+        'username',
+        "password",
+        "email"
+    ];
+
+
     public function managers(){
         return $this->hasMany(Manager::class);
     }

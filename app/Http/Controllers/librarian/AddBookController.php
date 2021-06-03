@@ -20,7 +20,6 @@ class AddBookController extends Controller
     }
 
     public function store(Request $request){
-
         $request->validate([
             "category_id"=>"required",
             "title"=>"required|max:255",
@@ -57,8 +56,7 @@ class AddBookController extends Controller
                     "available_date"=>Carbon::now()->toDateString()
                 ]);
             }
-            
-            return view("librarian.dashboard");
+            return back()->with("success","The Book Has Been Deployed");
         }else{
             return back()->with("error_title","This title is already exist.");
         }

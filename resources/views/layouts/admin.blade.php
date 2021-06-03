@@ -8,6 +8,7 @@
     <!--Linking to Custom CSS-->
     <link rel="stylesheet" href="{{ asset("css/global.css") }}">
     <link rel="stylesheet" href="{{ asset("css/login.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/profile.css") }}">
     <link href="{{ asset("css/manager_deployment.css") }}" rel="stylesheet">
     <!--Linking to Bootstrapt-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"

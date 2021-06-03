@@ -20,6 +20,7 @@ class Manager extends Authenticatable
         'name',
         'surname',
         'username',
+        "phone_number",
         "password",
         "email"
     ];

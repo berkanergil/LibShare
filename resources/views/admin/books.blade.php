@@ -68,10 +68,10 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important;"
                                                         type="checkbox"></td>
                                                 <td>{{ $book->title }}</td>
                                                 <td>{{ $book->author }}</td>
-                                                <td>{{ $book->category_id }}</td>
+                                                <td>{{ $book->category->title}}</td>
                                                 <td>{{ $book->language }}</td>
                                                 <td>{{ $book->stock_number }}</td>
-                                                <td>{{ $book->librarian_id }}</td>
+                                                <td>{{ $book->librarian->username}}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -110,12 +110,13 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important;"
                                             <tr>
                                                 <td class="bs-checkbox "><input data-index="0" name="btSelectItem"
                                                         type="checkbox"></td>
+                                                        <td>{{ $book->librarian->username }}</td>
                                                 <td>{{ $book->title }}</td>
                                                 <td>{{ $book->author }}</td>
                                                 <td>{{ $book->category_id }}</td>
                                                 <td>{{ $book->language }}</td>
                                                 <td>{{ $book->stock_number }}</td>
-                                                <td>{{ $book->librarian_id }}</td>
+                                                
                                             </tr>
                                             @endforeach
                                         

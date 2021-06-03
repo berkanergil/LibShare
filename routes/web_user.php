@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\user\AboutController;
 use App\Http\Controllers\user\AddEBookRequestController;
 use App\Http\Controllers\user\BookController;
 use App\Http\Controllers\user\BooksController;
+use App\Http\Controllers\user\CategoriesController;
+use App\Http\Controllers\user\ContactController;
 use App\Http\Controllers\user\EBookController;
 use App\Http\Controllers\user\EBooksController;
+use App\Http\Controllers\user\HomeController;
 use App\Http\Controllers\user\LibBasketController;
 use App\Http\Controllers\user\LoginController;
 use App\Http\Controllers\user\LogoutController;
@@ -15,6 +19,7 @@ use App\Http\Controllers\user\SettingsController;
 use App\Http\Controllers\user\UpdateUserController;
 use App\Http\Controllers\user\UpdateCardController;
 use App\Http\Controllers\user\UserController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,6 +41,15 @@ Route::prefix("user")->group(function (){
     $name_prefix="user_";
 
     Route::get('/dashboard', [UserController::class,"index"])->name($name_prefix."dashboard");
+
+    Route::get('/home', [HomeController::class,"index"])->name($name_prefix."home");
+    Route::get('/contact', [ContactController::class,"index"])->name($name_prefix."contact");
+
+    Route::get('/categories', [CategoriesController::class,"index"])->name($name_prefix."categories");
+
+    Route::get('/categories/{category_id}', [CategoriesController::class,"get"])->name($name_prefix."categories_id");
+
+    Route::get('/about', [AboutController::class,"index"])->name($name_prefix."about");
 
     Route::get('/settings', [SettingsController::class,"index"])->name($name_prefix."settings");
 

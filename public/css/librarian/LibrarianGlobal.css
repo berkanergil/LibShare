@@ -1,0 +1,120 @@
+select,input:hover{
+    border-color: #2a0845 !important;
+    outline-color: #2a0845 !important;
+}
+select,input:focus{
+    border-color: #2a0845 !important;
+    outline-color: #2a0845 !important;
+}
+
+.extra-outline input:hover{
+    border-color: #2a0845 !important;
+    outline-color: #2a0845 !important;
+}
+
+.extra-outline input:focus{
+    border-color: #2a0845 !important;
+    outline-color: #2a0845 !important;
+}
+.section label i:focus{
+    color: #2a0845 !important;
+
+}
+.uk-button-success {
+    background-color: #8cc14c;
+    color: #fff;
+}
+.uk-button-success:focus,
+.uk-button-success:hover {
+    background-color: #8ec73b;
+    color: #fff;
+}
+.uk-container{
+    background: transparent !important;
+}
+.uk-button-success.uk-active,
+.uk-button-success:active {
+    background-color: #72ae41 !important;
+    color: #fff ;
+}
+
+.sidebar-background {
+    background-color: transparent;
+}
+.side-tab {
+
+    border-bottom: 1px solid #e5e5e5;
+}
+.side-tab-link {
+    color: #FFFFFF !important;
+    padding: 20px 20px 20px 20px !important;
+    transition: all 0.15s ease-out;
+}
+.side-tab-link:hover {
+    color: #2a0845 !important;
+    padding-left: 35px;
+    transition: all 0.15s ease-out;
+}
+.info-car-card {
+    margin: 81px 0 0 0;
+    right: 0;
+    top: 0;
+    position: absolute !important;
+}
+.uk-nav .uk-active > a {
+    padding-left: 35px;
+    border-bottom: transparent;
+    background: transparent !important;
+    border-right: 2px solid #2a0845;
+}
+.uk-nav li > a:hover {
+    padding-left: 35px;
+    border-bottom: transparent;
+    background-color: #ffffff;
+}
+.button-icon {
+    padding-left: 15px;
+    padding-right: 10px;
+    float: left;
+    padding-top: 10px;
+}
+.button-tab-icon {
+    padding-right: 15px;
+    float: left;
+}
+.car-info-sidebar {
+    border-left: 1px solid #fafafa;
+    background-color: transparent;
+}
+@media only screen and (max-width: 980px) {
+
+    .sidebar-car-info {
+        margin-right: -300px;
+        transition: all 0.15s ease-out;
+    }
+}
+
+@media (min-width: 280px){
+    body{
+        overflow-y: visible !important;
+    }
+}
+.container {
+    width: 1024px;
+    padding: 2em;
+}
+
+.bold-blue {
+    font-weight: bold;
+    color: #0277BD;
+}
+.circle {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    overflow: hidden;
+    background: url("http://www.amesphotos.com/portraits/corporate-head-shot-on-location.jpg") 50% -24px no-repeat;
+    background-size: 200px;
+}

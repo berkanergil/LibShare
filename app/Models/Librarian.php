@@ -21,6 +21,7 @@ class Librarian extends Authenticatable
         'surname',
         'username',
         "password",
+        "phone_number",
         "email"
     ];
 
