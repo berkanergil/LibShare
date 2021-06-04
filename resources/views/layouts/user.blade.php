@@ -30,16 +30,6 @@
     </div>
 </footer>
 @yield('js')
-<script src ="{{ asset("js/user/Categories.js") }}"></script>
-{{-- <script src="{{ asset("js/user/backtotop.js") }}"></script>
-<script src="{{ asset("js/user/Home.js") }}"></script>
-<script src="{{ asset("js/user/Statistics.js") }}"></script>
-<script src="{{ asset("js/user/AnimatedBooks.js") }}"></script>
-<script src="{{ asset("js/user/modernir.custom.js") }}"></script>
-<script src ="{{ asset("js/user/About.js") }}"></script>
-
-<script src ="{{ asset("js/user/Contact.js") }}"></script>
-<script src ="{{ asset("js/user/CreditCard.js") }}"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit-icons.min.js"></script>

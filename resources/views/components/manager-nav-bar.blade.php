@@ -1,6 +1,6 @@
 <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark "
-        style="background: #101F2E !important ; backdrop-filter: blur(1px); font-weight: 600;">
+    style="background: #069287 !important ; backdrop-filter: blur(1px); font-weight: 600;">
         <a class="navbar-brand ml-3" href="#">Libshare | Manager</a>
         <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler "
             data-target="#navbarNav" data-toggle="collapse" style="border: none; outline: none;" type="button">

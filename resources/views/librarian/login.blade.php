@@ -1,5 +1,9 @@
 @extends('layouts.librarian')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset("css/login.css") }}">
+@endsection
+
 @section('content')
 
 {{-- <div class="container-fluid" style="min-height: 100vh">

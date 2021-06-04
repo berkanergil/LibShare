@@ -18,6 +18,7 @@ class UpdateCardController extends Controller
     }
 
     public function store(Request $request){
+        $request["number"]=str_replace(' ', '', $request["number"]);
         $card=User::find(Auth::user()->id)->card()->first();
         $two_days_from_now=Carbon::now()->addDays(2);
         $this->validate($request,[
@@ -26,7 +27,6 @@ class UpdateCardController extends Controller
             "expired_date" =>"required|date|after:".$two_days_from_now,
             "cvc_number"=>"required|digits:3"
         ]);
-
         $card->fill($request->all())->save();
         return back()->with("success","Card Infos are updated");
     }

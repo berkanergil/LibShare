@@ -12,6 +12,9 @@ class LibBasketController extends Controller
 {
     public function index(){
         $books=SavedBook::savedBooksWithAtt();
+        foreach($books as $book){
+            $book["trim"]=str_replace(' ', '', $book["title"]);
+        }
         return view("user.libBasket",[
             "books"=>$books
         ]);

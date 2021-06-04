@@ -8,6 +8,10 @@
 <link href="https://getuikit.com/assets/uikit/dist/css/uikit.css?nc=7103" rel="stylesheet">
 @endsection
 
+@section('js')
+<script src="{{ asset("js/user/Categories.js") }}"></script>
+@endsection
+
 @section('body_css')
 style="background:var(--background-color-primary) "
 @endsection
@@ -20,7 +24,7 @@ style="background:var(--background-color-primary) "
             <img class="img-fluid" style="max-width: 600px" src="{{ asset("images/system/category_donation.png") }}">
         </div>
         <div class="row pt-3 d-flex align-items-center justify-content-center">
-            <button onclick="window.location.href = '../Book_Donation/Book_Donation.html'"
+            <button onclick="window.location.href = '{{ route('user_addEBookRequest') }}'"
                 class="buttons text-uppercase">Make a Donation <i class="fas fa-location-arrow"></i></button>
         </div>
     </section>
@@ -33,9 +37,10 @@ style="background:var(--background-color-primary) "
                 <span class="selected"></span>
                 <ul id="img_category_options" class="options">
                     @foreach ($categories as $key=>$value)
-                     <li class="option" data-value="{{ $value->id }}"><a class="category-options" href="{{ route("user_categories_id",$value->id) }}">{{ $value->title }}</a></li>
+                    <li class="option" data-value="{{ $value->id }}"><a class="category-options"
+                            href="{{ route("user_categories_id",$value->id) }}">{{ $value->title }}</a></li>
                     @endforeach
-                    
+
                 </ul>
             </div>
         </label>
@@ -48,84 +53,120 @@ style="background:var(--background-color-primary) "
             <i class="fa fa-search"></i>
         </form>
         <div id="mother_cards" class="book-cards">
-            
-            @if (count($books)<1)
-            <div class="d-flex text-center align-items-center justify-content-center ">
-                <h1 class="text-white text-center" style="font-size: 20px;">Currently, There Are No Books Available For This Section</h1>
-            </div>
-            @endif
-            @foreach ($books as $book)
-            <div class="book-card">
-                <div class="content-wrapper">
-                    <img src="{{url('/images/books/'.$book->image)}}"
-                        alt="" class="book-card-img" style="width: 175px; height: 275px;">
-                    <div class="card-content">
-                        <div class="book-name">{{ $book->title }}</div>
-                        <div class="book-by">{{ $book->author }}</div>
-                        <span class="book-voters card-vote"> <i class="fas fa-eye" ></i>&nbsp;&nbsp;{{ rand(10,100) }} Total Reserves</span>
-                        <div class="book-sum card-sum">{{ $book->description }} </div>
-                    </div>
-                </div>
 
-                <div class=" d-flex align-items-center justify-content-center">
-                    <button type="button" data-toggle="modal" data-target="#{{ trim( $book->trim) }}"
-                        class="button-books ">View Details <i class="fas fa-info-circle"></i></button>
-                </div>
-                <div class="modal fade" id="{{ trim( $book->trim) }}" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                        <div class="modal-content" style="cursor: context-menu" style="max-height: 400px !important;">
-                            <div class="modal-header">
-                                <h3 style="color: #1E3E5B" class="font-weight-bold" id="exampleModalLongTitle">Book
-                                    Details</h3>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row ">
-                                    <div class="col d-flex justify-content-center align-items-center">
-                                        <div class="imagebook">
-                                            <img src="{{url('/images/books/'.$book->image)}}"
-                                                alt="" class="book-card-img">
+            @if (count($books)<1) <div class="d-flex text-center align-items-center justify-content-center ">
+                <h1 class="text-white text-center" style="font-size: 20px;">Currently, There Are No Books Available For
+                    This Section</h1>
+
+                @endif
+                @foreach ($books as $book)
+                <div class="book-card" id="{{ $book->title }}">
+                    <div class="content-wrapper">
+                        <img src="{{url('/images/books/'.$book->image)}}" alt="" class="book-card-img"
+                            style="width: 175px; height: 275px;">
+                        <div class="card-content">
+                            <div class="book-name" id="book-name">{{ $book->title }}</div>
+                            <div class="book-by">{{ $book->author }}</div>
+                            <span class="book-voters card-vote"> <i
+                                    class="fas fa-eye"></i>&nbsp;&nbsp;{{ rand(10,100) }} Total
+                                Reserves</span>
+                            <div class="book-sum card-sum">{{ $book->description }} </div>
+                        </div>
+                    </div>
+
+                    <div class=" d-flex align-items-center justify-content-center">
+                        <button type="button" data-toggle="modal" data-target="#{{ trim( $book->trim) }}"
+                            class="button-books ">View Details <i class="fas fa-info-circle"></i></button>
+                    </div>
+                    <div class="modal fade" id="{{ trim( $book->trim) }}" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content" style="cursor: context-menu"
+                                style="max-height: 400px !important;">
+                                <div class="modal-header">
+                                    <h3 style="color: #1E3E5B" class="font-weight-bold" id="exampleModalLongTitle">Book
+                                        Details</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row ">
+                                        <div class="col d-flex justify-content-center align-items-center">
+                                            <div class="imagebook">
+                                                <img src="{{url('/images/books/'.$book->image)}}" alt=""
+                                                    class="book-card-img">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <h2 class="modal-header">{{ $book->title }}</h2>
+                                            <span>
+                                                <h4 class="modal-text">{{ $book->author }}</h4>
+                                            </span>
+                                            <span>
+                                                <h4 class="modal-text">{{ $book->publish_date }}</h4>
+                                            </span>
+                                            <span>
+                                                <h4 class="modal-text">{{ $book->language }}</h4>
+                                            </span>
+                                            <span>
+                                                <h5 class="modal-text">{{ $book->description }}</h5>
+                                            </span>
+
+                                            @if ($book->saved_status=="0")
+                                            <span>
+                                                <h4 class="modal-text">Own Status: <span
+                                                        style="color: #3ae374">Available</span>
+                                                </h4>
+                                            </span>
+                                            <h4 class="modal-text">Closest Available Date: <span style="color: #3ae374">
+                                                    {{ $book["stocked_book"]["available_date"] }} </span></h4>
+                                            @else
+                                            <span>
+                                                <h4 class="modal-text">Own Status: <span style="color: #cc0000">Not
+                                                        Available</span></h4>
+                                            </span>
+                                            <h4 class="modal-text">Closest Available Date: <span style="color: #cc0000">
+                                                    {{ $book["stocked_book"]["available_date"] }} </span></h4>
+                                            @endif
+
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <h2 class="modal-header">{{ $book->title }}</h2>
-                                        <span>
-                                            <h4 class="modal-text">{{ $book->author }}</h4>
-                                        </span>
-                                        <span>
-                                            <h4 class="modal-text">{{ $book->publish_date }}</h4>
-                                        </span>
-                                        <span>
-                                            <h4 class="modal-text">{{ $book->language }}</h4>
-                                        </span>
-                                        <span>
-                                            <h5 class="modal-text">{{ $book->description }}</h5>
-                                        </span>
-                                        <span>
-                                            <h4 class="modal-text">Stock Status: <span
-                                                    style="color: #3ae374">Available</span></h4>
-                                        </span>
-
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="button-details-cancel" data-dismiss="modal"><i
-                                        class="far fa-window-close"></i> Cancel</button>
-                                <button type="button" class="button-details"><i class="fas fa-cart-plus"></i> Add to
-                                    Lib-Basket</button>
+                                @if (session("success"))
+                                {{ session("success") }}
+                                @endif
+                                @if ($book->saved_status=="0")
+                                <form action="{{route("user_book_store")}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="stocked_book_id"
+                                        value="{{ $book["stocked_book"]["id"] }}">
+                                    <div class="modal-footer">
+                                        <button type="reset" class="button-details-cancel" data-dismiss="modal"><i
+                                                class="far fa-window-close"></i> Cancel</button>
+                                        <button type="submit" class="button-details"><i class="fas fa-cart-plus"></i>
+                                            Add to
+                                            Lib-Basket</button>
+                                    </div>
+                                </form>
+                                @else
+                                <div class="modal-footer">
+                                    <button type="button" class="button-details-cancel" data-dismiss="modal"><i
+                                            class="far fa-window-close"></i> Cancel</button>
+                                    <button type="button" aria-disabled="true" tabindex="-1" disabled
+                                        class="disabled-button  "><i class="fas fa-cart-plus"></i> Add to
+                                        Lib-Basket</button>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            @endforeach
-            
+                @endforeach
+        </div>
 
-            {{-- <div class="book-card">
+
+        {{-- <div class="book-card">
                 <div class="content-wrapper">
                     <img src="https://images-na.ssl-images-amazon.com/images/I/7167iiDUeAL.jpg" alt=""
                         class="book-card-img">
@@ -214,7 +255,7 @@ style="background:var(--background-color-primary) "
 
             </div> --}}
 
-        </div>
+    </div>
     </div>
 </section>
 
@@ -222,7 +263,7 @@ style="background:var(--background-color-primary) "
     $(document).ready(function(){
     $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#mother_cards book-name").filter(function() {
+        $("#book-title").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });

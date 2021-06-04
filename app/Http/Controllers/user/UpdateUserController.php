@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Models\User;
+use App\Models\ReservedBook;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -11,8 +12,10 @@ use Illuminate\Support\Facades\Hash;
 class UpdateUserController extends Controller
 {
     public function index(){
+        $reservedBooks=ReservedBook::reservedBooksWithAtt();
         return view("user.settings.updateUser",[
-            "user"=>Auth::user()
+            "user"=>Auth::user(),
+            "books"=>$reservedBooks
         ]);
     }
 
@@ -24,8 +27,18 @@ class UpdateUserController extends Controller
             "phone_number" =>"required|max:255",
             "email" =>"required|email|max:255",
             "password" =>"nullable|confirmed|min:5",
+            "image"=>"nullable|image|mimes:jpeg,png,jpg,gif,svg,tmp|max:2048",
             "old_password" =>"required",
         ]);
+
+        $user=Auth::user();
+        if(is_null($request->image)){
+            $imageName=Auth::user()->image;
+        }else{
+            unlink(public_path("images/users/".$user->image));
+            $imageName = time().'.'.$request->image->extension();  
+            $request->image->move(public_path('images/users/'), $imageName);
+        }
 
         if(is_null($request->password)){
             if(Hash::check($request->old_password,Auth::user()->password)){
@@ -42,6 +55,7 @@ class UpdateUserController extends Controller
                             "surname"=>$request->surname,
                             "phone_number"=>$request->phone_number,
                             "email"=>$request->email,
+                            "image"=>$imageName,
                             "password"=>Hash::make($request->old_password),
                         ]);
                         return back()->with("success","User informations updated.");
@@ -70,6 +84,7 @@ class UpdateUserController extends Controller
                             "surname"=>$request->surname,
                             "phone_number"=>$request->phone_number,
                             "email"=>$request->email,
+                            "image"=>$imageName,
                             "password"=>Hash::make($request->password),
                         ]);
                         return back()->with("success","User informations updated.");

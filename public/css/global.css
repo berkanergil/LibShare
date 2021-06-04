@@ -22,6 +22,13 @@
     --font-family-secondary: 'Merriweather', serif;
 }
 
+.avatar {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
 /*GENERAL*/
 html,body{
     margin: 0;

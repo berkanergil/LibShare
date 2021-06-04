@@ -9,6 +9,14 @@
 style="background: var(--background-color-primary) !important;"
 @endsection
 
+@section('js')
+<script src="{{ asset("js/user/backtotop.js") }}"></script>
+<script src="{{ asset("js/user/Home.js") }}"></script>
+<script src="{{ asset("js/user/Statistics.js") }}"></script>
+<script src="{{ asset("js/user/AnimatedBooks.js") }}"></script>
+<script src="{{ asset("js/user/modernir.custom.js") }}"></script>
+@endsection
+
 @section('content')
 <section style="background: var(--background-color-primary) !important; min-height: 300vh">
     <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark"
@@ -43,9 +51,9 @@ style="background: var(--background-color-primary) !important;"
            <li class="nav-item dropdown" style="z-index: 100 !important;">
                <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->username }}</a>
                <span class="dropdown-menu" style="background-color: #1E3E5B">
-     <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="../Profile/Profile.html">My Account</a>
+     <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="{{ route("user_updateUser") }}">My Account</a>
      <div class="dropdown-divider"></div>
-     <a style="color: #FFFFFF;font-size: 10px;" class="dropdown-item " href="../../Login-Signup/Login_User/Login.html">Logout</a>
+     <a style="color: #FFFFFF;font-size: 10px;" class="dropdown-item " href="{{ route("user_logout") }}">Logout</a>
    </span>
            </li>
        </ul>
@@ -259,7 +267,7 @@ style="background: var(--background-color-primary) !important;"
                         </li>
                     </ul>
                     <div class="d-flex justify-content-center align-items-center pt-5">
-                        <button onclick="window.location.href = '../Categories/Categories.html'" class="buttons text-uppercase">See More <i class="far fa-eye"></i></button>
+                        <button onclick="window.location.href = '{{ route('user_categories') }}'" class="buttons text-uppercase">See More <i class="far fa-eye"></i></button>
                     </div>
                 </div>
             </div>

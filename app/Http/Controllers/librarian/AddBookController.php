@@ -28,11 +28,10 @@ class AddBookController extends Controller
             "language"=>"required|max:255",
             "description"=>"required|max:255",
             "image"=>"required|image|mimes:jpeg,png,jpg,gif,svg,tmp|max:2048",
-            "stock_number"=>"required|max:255|min:0",
+            "stock_number"=>"required|max:255|min:1",
         ]);
-
         $imageName = time().'.'.$request->image->extension();  
-     
+
         $request->image->move(public_path('images/books/'), $imageName);
 
         if(!Book::where("title","=",$request->title)->exists()){
@@ -49,7 +48,7 @@ class AddBookController extends Controller
             ]);
 
             $book_id=Book::latest()->first()->id;
-
+            
             for($i=0;$i<$request->stock_number;$i++){
                 StockedBook::create([
                     "book_id"=>$book_id,

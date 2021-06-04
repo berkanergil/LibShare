@@ -5,13 +5,16 @@
 <link href="{{ asset("css/user/Contact.css") }}" rel="stylesheet">
 @endsection
 
+@section('js')
+<script src ="{{ asset("js/user/Contact.js") }}"></script>
+@endsection
+
 @section('body_css')
 style="background:var(--background-color-primary) "
 @endsection
 
 @section('content')
 <x-user-nav-bar/>
-
 
 <section style="background: var(--background-color-primary) !important; min-height: 100vh">
 

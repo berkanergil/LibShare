@@ -4,6 +4,9 @@
 <link href="{{ asset("css/global.css") }}" rel="stylesheet">
 <link href="{{ asset("css/user/About.css") }}" rel="stylesheet">
 @endsection
+@section('js')
+<script src ="{{ asset("js/user/About.js") }}"></script>
+@endsection
 
 @section('body_css')
 style="background:var(--background-color-primary) "

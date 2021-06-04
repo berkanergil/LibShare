@@ -117,7 +117,7 @@ select,input:focus{
     height: 150px;
     border-radius: 100px;
     overflow: hidden;
-    background: url("http://www.amesphotos.com/portraits/corporate-head-shot-on-location.jpg") 50% -24px no-repeat;
+    background: 50% -24px no-repeat;
     background-size: 200px;
 }
 

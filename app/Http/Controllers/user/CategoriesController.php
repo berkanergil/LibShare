@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\user;
 
-use App\Http\Controllers\Controller;
 use App\Models\Book;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CategoriesController extends Controller
 {
@@ -13,6 +15,19 @@ class CategoriesController extends Controller
         $books=Book::latest()->paginate(20);
         foreach ($books as $book) {
             $book["trim"]=str_replace(' ', '', $book["title"]);
+            $stocked_book=$book->stockedBooks()->orderBy('available_date','asc')->first();
+            $user=User::find(Auth::user()->id);
+            $check=$user->savedBooks()->
+            select("book_id")->
+            join("stocked_books","saved_books.stocked_book_id","=","stocked_books.id")->
+            where("book_id","=",$stocked_book->book_id)->first();
+            if(isset($check->book_id)){
+                $book["stocked_book"]=$stocked_book;
+                $book["saved_status"]="1";
+            }else{
+                $book["stocked_book"]=$stocked_book;
+                $book["saved_status"]="0";
+            }
         }
         return view("user.categories",
         [
@@ -27,6 +42,19 @@ class CategoriesController extends Controller
         $books=Category::find($category_id)->books()->get();
         foreach ($books as $book) {
             $book["trim"]=str_replace(' ', '', $book["title"]);
+            $stocked_book=$book->stockedBooks()->orderBy('available_date','asc')->first();
+            $user=User::find(Auth::user()->id);
+            $check=$user->savedBooks()->
+            select("book_id")->
+            join("stocked_books","saved_books.stocked_book_id","=","stocked_books.id")->
+            where("book_id","=",$stocked_book->book_id)->first();
+            if(isset($check->book_id)){
+                $book["stocked_book"]=$stocked_book;
+                $book["saved_status"]="1";
+            }else{
+                $book["stocked_book"]=$stocked_book;
+                $book["saved_status"]="0";
+            }
         }
         return view("user.categories",
         [
@@ -36,4 +64,6 @@ class CategoriesController extends Controller
         ]
     );
     }
+
+    
 }

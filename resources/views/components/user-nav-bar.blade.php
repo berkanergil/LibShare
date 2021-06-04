@@ -29,11 +29,11 @@
                 <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("user_contact") }}" >Contact</a>
             </li>
             <li class="nav-item dropdown" style="z-index: 100 !important;">
-                <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->username }}</a>
+                <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
                 <span class="dropdown-menu" style="background-color: #1E3E5B">
-      <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="../Profile/Profile.html">My Account</a>
+      <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="{{ route("user_updateUser") }}">My Account</a>
       <div class="dropdown-divider"></div>
-      <a style="color: #FFFFFF;font-size: 10px;" class="dropdown-item " href="../../Login-Signup/Login_User/Login.html">Logout</a>
+      <a style="color: #FFFFFF;font-size: 10px;" class="dropdown-item " href="{{ route("user_logout") }}">Logout</a>
     </span>
             </li>
         </ul>

@@ -45,6 +45,7 @@ Route::group(["middleware"=>"librarianAuth"],function () {
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
         Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
+        Route::post('/book/{book:title}', [BookController::class,"store"]);
 
         Route::get('/ebooks', [EBooksController::class,"index"])->name($name_prefix."ebooks");
 
