@@ -27,6 +27,7 @@ class AddManagerController extends Controller
                 "email" =>"required|email|max:255",
                 "password" =>"required|confirmed|min:5",
             ]);
+
             if (!Manager::where('username', '=', $request->username)->exists()) {
                 if(!Manager::where('email', '=', $request->email)->exists()){
                     Manager::create([
@@ -45,7 +46,7 @@ class AddManagerController extends Controller
              }else{
                 return back()->with("error_username","This username is already exists.");
              }
-            
+
         }else{return view("admin.login");}
     }
 }

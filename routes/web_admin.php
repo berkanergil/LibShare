@@ -22,12 +22,12 @@ use App\Models\Librarian;
 
 Route::prefix("admin")->group(function(){
     Route::get('/login', [LoginController::class,"index"])->name("admin_login");
-    Route::post('/login', [LoginController::class,"store"]);    
+    Route::post('/login', [LoginController::class,"store"]);
 });
 
 
 
-Route::group(["middleware"=>"adminAuth"],function(){
+/*Route::group(["middleware"=>"adminAuth"],function(){*/
     Route::prefix("admin")->group(function (){
         $name_prefix="admin_";
         Route::get('/dashboard', [AdminController::class,"index"])->name($name_prefix."dashboard");
@@ -60,6 +60,6 @@ Route::group(["middleware"=>"adminAuth"],function(){
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
         Route::get('/book/{book}', [BookController::class,"index"])->name($name_prefix."book");
-    }); 
-});
+    });
+/*});*/
 

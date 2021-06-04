@@ -14,6 +14,7 @@ class LoginController extends Controller
 
     public function store(Request $request){
 
+
         if(Auth::guard('admin')->attempt($request->only("username","password"))){
             return redirect()->route("admin_books");
         }

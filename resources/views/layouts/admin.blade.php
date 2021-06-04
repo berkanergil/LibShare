@@ -10,6 +10,7 @@
     <!--Linking to CSS Files-->
     <link rel="stylesheet" href="{{ asset("css/global.css") }}">
     <link rel="stylesheet" href="{{ asset("css/librarian/LibrarianGlobal.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/login.css") }}">
     @yield('css')
     <!--Linking to Font Awesome-->
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/3a82b90854.js"></script>
