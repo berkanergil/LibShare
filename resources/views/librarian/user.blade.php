@@ -75,8 +75,6 @@ style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;m
 @section('content')
 <x-librarian-nav-bar/>
 
-
-
 <section style="min-height: 150vh;">
         <div style="background: transparent!important;" class="mt-0">
                 <div uk-height-viewport="offset-top: true; offset-bottom: true">

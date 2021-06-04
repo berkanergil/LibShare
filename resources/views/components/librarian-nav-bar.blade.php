@@ -7,6 +7,9 @@ style="background: #2a0845 !important ; backdrop-filter: blur(1px); font-weight:
 </button>
 <div class="collapse navbar-collapse  " id="navbarNav">
     <ul class="navbar-nav ml-auto text-center text-uppercase">
+        <li  class="nav-item mr-5">
+            <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("librarian_ebookRequests") }}" >Notifications </a>
+        </li>
         <li class="nav-item active expand mr-5">
             <a style="font-size: 15px" class="middle nav-link"
                 href="{{ route("librarian_books") }}">Books
@@ -15,14 +18,12 @@ style="background: #2a0845 !important ; backdrop-filter: blur(1px); font-weight:
         <li  class="nav-item mr-5">
             <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("librarian_addBook") }}" >Book Deployment</a>
         </li>
-        <li  class="nav-item mr-5">
-            <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("librarian_ebookRequests") }}" >E-Book Donation</a>
-        </li>
+        
         <li  class="nav-item mr-5">
             <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("librarian_users") }}" >Users</a>
         </li>
         <li class="nav-item  dropdown" style="z-index: 100 !important;">
-            <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::guard('librarian')->user()->username }}</a>
+            <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::guard('librarian')->user()->name }} {{ Auth::guard('librarian')->user()->surname }}</a>
             <span class="dropdown-menu" style="background-color: #18263A">
                 <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="{{ route("librarian_updateLibrarian") }}">My Account</a>
                 <div class="dropdown-divider"></div>

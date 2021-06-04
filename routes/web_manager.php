@@ -57,15 +57,15 @@ Route::group(["middleware"=>"managerAuth"],function () {
         
         Route::get('/ebooks',[EBooksController::class,"index"])->name($name_prefix."ebooks");
 
-        Route::get('/ebook/{book:title}',[EBookController::class,"index"])->name($name_prefix."ebook");
+        Route::get('/ebook/{book}',[EBookController::class,"index"])->name($name_prefix."ebook");
 
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
-        Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
+        Route::get('/book/{book}', [BookController::class,"index"])->name($name_prefix."book");
 
         Route::get('/users', [UsersController::class,"index"])->name($name_prefix."users");
 
-        Route::get('/user/{user:username}', [UserController::class,"index"])->name($name_prefix."user");
+        Route::get('/user/{user}', [UserController::class,"index"])->name($name_prefix."user");
 
         Route::get("/managers",[ManagersController::class,"index"])->name($name_prefix."managers");
         Route::get("/managers/{manager}",[ManagerController::class,"get"])->name($name_prefix."manager");

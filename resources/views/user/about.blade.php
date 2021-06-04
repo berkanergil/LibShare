@@ -50,7 +50,7 @@ style="background:var(--background-color-primary) "
             <dt>We<strong> Have&bull; Libshare&bull;</strong>Card</dt>
             <dd>
               <em>Here is the Demonstration of LibShare Member Card</em><br>
-              <img style="border-radius: 10px; max-width: 100%"  src="../../Images/libshare_card.png" alt="">
+              <img style="border-radius: 10px; max-width: 100%"  src="{{ asset("images/system/libshare_card.png") }}" alt="">
             </dd>
           </dl>
           <p>
@@ -85,7 +85,7 @@ style="background:var(--background-color-primary) "
                     <div class="col">
                       <div class="d-flex flex-lg-row flex-column-reverse no-gutters justify-content-center">
                         <div class="col-3 text-right"><img class="img-fluid" id="quotes" src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png" width="110" height="110"></div>
-                        <div class="col pr-lg-5 "><img class=" img-1 mr-lg-5" src="../../Images/testimonial1.jpg"></div>
+                        <div class="col pr-lg-5 "><img class=" img-1 mr-lg-5" src="{{ asset("images/system/testimonial1.jpg") }}"></div>
                       </div>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ style="background:var(--background-color-primary) "
                     <div class="col">
                       <div class="d-flex flex-lg-row flex-column-reverse no-gutters justify-content-center">
                         <div class="col-3 text-right"><img class="img-fluid" id="quotes" src="https://img.icons8.com/ultraviolet/40/000000/quote-left.png" width="110" height="110"></div>
-                        <div class="col pr-lg-5"><img class=" img-1 mr-lg-5 " src="../../Images/testimonial2.jpg""></div>
+                        <div class="col pr-lg-5"><img class=" img-1 mr-lg-5 " src="{{ asset("images/system/testimonial2.jpg") }}"></div>
                       </div>
                     </div>
                   </div>

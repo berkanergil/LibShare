@@ -1,7 +1,7 @@
 <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark "
          style="background: #1E3E5B !important ; backdrop-filter: blur(1px); font-weight: 600;">
-      <a class="navbar-brand ml-3" href="#" >Libshare</a>
+      <a class="navbar-brand ml-3" href="{{ route("user_home") }}" >Libshare</a>
       <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler "
               data-target="#navbarNav" data-toggle="collapse" style="border: none; outline: none;" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,10 @@
                 <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("user_about") }}" >About</a>
             </li>
             <li  class="nav-item mr-5">
-                <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("user_categories") }}" >Categories</a>
+                <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("user_categories") }}" >Books</a>
+            </li>
+            <li  class="nav-item mr-5">
+                <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("user_ebooks") }}" >E-Books</a>
             </li>
             <li class="nav-item mr-5">
                 <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("user_libbasket") }}" >Lib-Basket</a>

@@ -8,6 +8,7 @@
     <link href=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/font-awesome.min.css" rel="stylesheet">
     <link href="https://getuikit.com/assets/uikit/dist/css/uikit.css?nc=7103" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("css/table.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/manager/Librarian.css") }}">
 @endsection
 
 @section('js')
@@ -49,6 +50,7 @@
         $(this).toggleClass("bold-blue");
     });
 </script>
+<script src="{{ asset("js/admin/Generate_Key.js") }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>

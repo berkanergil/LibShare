@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class AddCategoryController extends Controller
 {
     public function index(){
-        return view("manager.addCategory");
+        return view("manager.addCategory",[
+            "categories"=>Category::latest()->paginate(20)
+        ]);
     }
 
     public function store(Request $request){

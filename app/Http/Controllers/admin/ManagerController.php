@@ -13,7 +13,7 @@ class ManagerController extends Controller
 {
     public function index(Manager $manager){
         return view("admin.manager",[
-            "manager"=>$manager,
+            "user"=>$manager,
         ]);
     }
 
@@ -23,6 +23,8 @@ class ManagerController extends Controller
             "username" =>['required', Rule::unique('managers')->ignore($manager->id),"max:255"],
             "email" =>['required',Rule::unique('managers')->ignore($manager->id),"email"],
             "password" =>"nullable|confirmed|min:5",
+            "surname" =>"required|max:255",
+            "phone_number" =>"required|max:255",
         ]);
         if($request["submit"]=="update"){
             $request["password"]=Hash::make($request->password);
@@ -30,7 +32,7 @@ class ManagerController extends Controller
             return back()->with("success","Manager infos are updated");
         }if($request["submit"]=="delete"){
             $manager->delete();
-            return redirect()->route("admin_managers");
+            return redirect()->route("admin_users");
         }
             
         

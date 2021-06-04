@@ -20,7 +20,7 @@
                <a style="color: #FFFFFF;font-size: 15px;" class="middle nav-link" href="{{ route("admin_users") }}" >Users</a>
            </li>
            <li class="nav-item  dropdown" style="z-index: 100 !important;">
-               <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::guard('admin')->user()->username }}</a>
+               <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::guard('admin')->user()->name }} {{ Auth::guard('admin')->user()->surname }}</a>
                <span class="dropdown-menu" style="background-color: #18263A">
                    <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="{{ route("admin_updateAdmin") }}">My Account</a>
                    <div class="dropdown-divider"></div>

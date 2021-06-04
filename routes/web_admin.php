@@ -45,21 +45,21 @@ Route::group(["middleware"=>"adminAuth"],function(){
 
         Route::get('/librarians', [LibrariansController::class,"index"])->name($name_prefix."librarians");
 
-        Route::get('/librarian/{librarian:username}', [LibrarianController::class,"index"])->name($name_prefix."librarian");
+        Route::get('/librarian/{librarian}', [LibrarianController::class,"index"])->name($name_prefix."librarian");
 
         Route::get('/users', [UsersController::class,"index"])->name($name_prefix."users");
 
-        Route::get('/user/{user:username}', [UserController::class,"index"])->name($name_prefix."user");
+        Route::get('/user/{user}', [UserController::class,"index"])->name($name_prefix."user");
 
         Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
 
         Route::get('/ebooks',[EBooksController::class,"index"])->name($name_prefix."ebooks");
 
-        Route::get('/ebook/{book:title}',[EBookController::class,"index"])->name($name_prefix."ebook");
+        Route::get('/ebook/{book}',[EBookController::class,"index"])->name($name_prefix."ebook");
 
         Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
-        Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
+        Route::get('/book/{book}', [BookController::class,"index"])->name($name_prefix."book");
     }); 
 });
 

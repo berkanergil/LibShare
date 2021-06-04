@@ -34,11 +34,11 @@ style="background: var(--background-color-primary) !important; "
                 <img src="{{url('/images/books/'.$book->image)}}" alt="" class="book-card-img"
                     style="width: 175px; height: 275px;">
                 <div class="card-content">
-                    <div class="book-name">{{ $book->title }}</div>
-                    <div class="book-by">{{ $book->author }}</div>
+                    <div class="book-name">{{ ucwords($book->title) }}</div>
+                    <div class="book-by">{{ ucwords($book->author) }}</div>
                     <span class="book-voters card-vote"> <i class="fas fa-eye"></i>&nbsp;&nbsp;{{ rand(10,100) }} Total
                         Reserves</span>
-                    <div class="book-sum card-sum">{{ $book->description }} </div>
+                    <div class="book-sum card-sum">{{ ucfirst($book->description) }} </div>
                 </div>
             </div>
 
@@ -48,82 +48,69 @@ style="background: var(--background-color-primary) !important; "
             </div>
             <div class="modal fade" id="{{ trim( $book->trim) }}" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content" style="cursor: context-menu" style="max-height: 400px !important;">
-                        <div class="modal-header">
-                            <h3 style="color: #1E3E5B" class="font-weight-bold" id="exampleModalLongTitle">Book
-                                Details</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row ">
-                                <div class="col d-flex justify-content-center align-items-center">
-                                    <div class="imagebook">
-                                        <img src="{{url('/images/books/'.$book->image)}}" alt="" class="book-card-img">
+                <form action="{{route("user_reservebook_store")}}" method="post">
+                    @csrf
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content" style="cursor: context-menu" style="max-height: 400px !important;">
+                            <div class="modal-header">
+                                <h3 style="color: #1E3E5B" class="font-weight-bold" id="exampleModalLongTitle">Book
+                                    Details</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row ">
+                                    <div class="col d-flex justify-content-center align-items-center">
+                                        <div class="imagebook">
+                                            <img src="{{url('/images/books/'.$book->image)}}" alt="" class="book-card-img">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                
+                                        <h2 class="modal-header" style="color: #1e1e1e !important;">{{ ucwords($book->title) }} </h2>
+                                        <span>
+                                            <h4 class="modal-text">{{ ucwords($book->author) }}</h4>
+                                        </span>
+                                        <span>
+                                            <h4 class="modal-text">{{ $book->publish_date }}</h4>
+                                        </span>
+                                        <span>
+                                            <h4 class="modal-text">{{ $book->language=="EN"?"ENGLISH":"TURKISH" }}</h4>
+                                        </span>
+                                        <span>
+                                            <h5 class="modal-text">{{ ucfirst($book->description) }}</h5>
+                                        </span>
+
+                                        
+                                            <input type="hidden" name="stocked_book_id"
+                                                value="{{ $book->stocked_book_id }}">
+                                            <input type="hidden" name="saved_book_id" value="{{ $book->saved_book_id }}">
+                                            <input type="hidden" name="start_date" value="{{ $book->available_date }}">
+                                            <label style="color: black" for="date">Select End Date:</label>
+                                            <input id="date" type="date" name="end_date"
+                                                min="{{ date('Y-m-d', strtotime($book->available_date . ' +1 day')) }}"
+                                                max="{{ date('Y-m-d', strtotime($book->available_date . ' +14 day')) }}"
+                                                value="{{ date('Y-m-d', strtotime($book->available_date . ' +1 day')) }}">
+                                            <br>
+                                            <br>
+                                           
+                                    
+
                                     </div>
                                 </div>
-                                <div class="col">
-            
-                                    <h2 class="modal-header" style="color: #1e1e1e !important;">{{ $book->title }} {{ $book->available_date}}</h2>
-                                    <span>
-                                        <h4 class="modal-text">{{ $book->author }}</h4>
-                                    </span>
-                                    <span>
-                                        <h4 class="modal-text">{{ $book->publish_date }}</h4>
-                                    </span>
-                                    <span>
-                                        <h4 class="modal-text">{{ $book->language }}</h4>
-                                    </span>
-                                    <span>
-                                        <h5 class="modal-text">{{ $book->description }}</h5>
-                                    </span>
-
-                                    <form action="{{route("user_reservebook_store")}}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="stocked_book_id"
-                                            value="{{ $book->stocked_book_id }}">
-                                        <input type="hidden" name="saved_book_id" value="{{ $book->saved_book_id }}">
-                                        <input type="hidden" name="start_date" value="{{ $book->available_date }}">
-                                        <label for="date">Select end date:</label>
-                                        <input id="date" type="date" name="end_date"
-                                            min="{{ date('Y-m-d', strtotime($book->available_date . ' +1 day')) }}"
-                                            value="{{ date('Y-m-d', strtotime($book->available_date . ' +1 day')) }}">
-                                        <br>
-                                        <br>
-                                        <label for="button">Reserve book: </label>
-                                        <input type="submit" id="button">
-                                    </form>
-
-                                </div>
                             </div>
-                        </div>
-                        @if (session("success"))
-                        {{ session("success") }}
-                        @endif
-                        @if ($book->saved_status=="0")
-                        <form action="{{route("user_book_store")}}" method="post">
-                            @csrf
-                            <input type="hidden" name="stocked_book_id" value="{{ $book->stocked_book_id }}">
                             <div class="modal-footer">
-                                <button type="reset" class="button-details-cancel" data-dismiss="modal"><i
+                                <button type="button" class="button-details-cancel" data-dismiss="modal"><i
                                         class="far fa-window-close"></i> Cancel</button>
-                                <button type="submit" class="button-details"><i class="fas fa-cart-plus"></i> Add to
+                                <button type="submit" aria-disabled="true" tabindex="-1" 
+                                    ><i class="fas fa-cart-plus"></i> Add to
                                     Lib-Basket</button>
                             </div>
-                        </form>
-                        @else
-                        <div class="modal-footer">
-                            <button type="button" class="button-details-cancel" data-dismiss="modal"><i
-                                    class="far fa-window-close"></i> Cancel</button>
-                            <button type="button" aria-disabled="true" tabindex="-1" disabled
-                                class="disabled-button  "><i class="fas fa-cart-plus"></i> Add to
-                                Lib-Basket</button>
+        
                         </div>
-                        @endif
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         @endforeach

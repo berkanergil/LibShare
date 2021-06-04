@@ -30,7 +30,7 @@ class ReservedBook extends Model
         ->join("stocked_books","stocked_books.id","=","saved_books.stocked_book_id")
         ->join("books","books.id","=","stocked_books.book_id")
         ->select("saved_books.id as saved_book_id","books.id as book_id","stocked_books.id as stocked_book_id","reserved_books.id as reserved_book_id","books.*","stocked_books.*","reserved_books.*")
-        ->paginate(2);
+        ->paginate(20);
         return $books;
     }
 

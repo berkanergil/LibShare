@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class CategoriesController extends Controller
 {
     public function index(){
-        $books=Book::latest()->paginate(20);
+        $books=Book::latest()->paginate(2);
         foreach ($books as $book) {
             $book["trim"]=str_replace(' ', '', $book["title"]);
             $stocked_book=$book->stockedBooks()->orderBy('available_date','asc')->first();
@@ -39,7 +39,7 @@ class CategoriesController extends Controller
     }
 
     public function get($category_id){
-        $books=Category::find($category_id)->books()->get();
+        $books=Category::find($category_id)->books()->paginate(2);
         foreach ($books as $book) {
             $book["trim"]=str_replace(' ', '', $book["title"]);
             $stocked_book=$book->stockedBooks()->orderBy('available_date','asc')->first();

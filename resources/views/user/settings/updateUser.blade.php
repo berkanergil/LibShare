@@ -13,6 +13,7 @@ style="background: var(--background-color-primary) !important; "
 @endsection
 
 
+
 @section('content')
 <x-user-nav-bar />
 <section style="min-height: 100vh;">
@@ -311,7 +312,7 @@ style="background: var(--background-color-primary) !important; "
                     @enderror
                     <div class="field-container">
                       <label class="text-white" for="name">NAME ON CARD</label>
-                      <input id="name" maxlength="20" type="text" name="name" value="{{ $user->card->name }}">
+                      <input id="name" maxlength="20" type="text" name="name" value="{{ ucwords($user->card->name) }}">
                     </div>
                     @error('number')
                         {{ $message }}
@@ -381,16 +382,16 @@ style="background: var(--background-color-primary) !important; "
                                         </div>
                                         <div class="col float-right">
                                         <span >
-                                            <h2 class="modal-header">{{ $book->title }}</h2>
+                                            <h2 class="modal-header">{{ ucwords($book->title) }}</h2>
                                         </span>
                                             <span>
-                                            <h4 class="modal-text">{{ $book->author }}</h4>
+                                            <h4 class="modal-text">{{ ucwords($book->author) }}</h4>
                                         </span>
                                             <span>
-                                            <h4 class="modal-text">{{ $book->language }}</h4>
+                                            <h4 class="modal-text">{{ $book->language=="EN"?"ENGLISH":"TURKISH" }}</h4>
                                         </span>
                                             <span>
-                                            <h4 class="modal-text"> {{ $book->description }}</h4>
+                                            <h4 class="modal-text"> {{ ucfirst($book->description) }}</h4>
                                         </span>
                                             <span>
                                             <h4 class="stockStatus modal-text"> Reserved Until: {{ $book->end_date }}</h4>

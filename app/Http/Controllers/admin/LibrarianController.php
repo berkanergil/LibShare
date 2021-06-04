@@ -10,7 +10,7 @@ class LibrarianController extends Controller
 {
     public function index(Librarian $librarian){
         return view("admin.librarian",[
-            "librarian"=>$librarian
+            "user"=>$librarian
         ]);
     }
 }

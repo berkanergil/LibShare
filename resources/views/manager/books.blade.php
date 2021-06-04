@@ -99,98 +99,115 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                     <ul id="component-nav" class="uk-switcher uk-margin-large ">
                         <li>
                             <div class="uk-section ">
-                                <div class="container-fluid">
-                                    <h1 style="border-bottom: 3px solid #FFFFFF;width: 40% !important;"
-                                        class="text-white">All Books</h1>
-                                    <div id="toolbar" class="mb-3">
-                                        <select class="form-control">
-                                            <option value="">Export Basic</option>
-                                            <option value="all">Export All</option>
-                                            <option value="selected">Export Selected</option>
-                                        </select>
-                                    </div>
-                                    <table class="text-white" id="table" data-toggle="table" data-search="true"
-                                        data-filter-control="true" data-show-export="true" data-click-to-select="true"
-                                        data-toolbar="#toolbar">
-                                        <thead>
-                                            <tr>
-                                                <th data-field="state" data-checkbox="true"></th>
-                                                <th data-field="book_name" data-filter-control="input"
-                                                    data-sortable="true">Name of the Book</th>
-                                                <th data-field="author_name" data-filter-control="input"
-                                                    data-sortable="true">Name of Author</th>
-                                                <th data-field="category" data-filter-control="select"
-                                                    data-sortable="true">Category</th>
-                                                <th data-field="language" data-filter-control="select"
-                                                    data-sortable="true">Language</th>
-                                                <th data-field="stock" data-sortable="true">Stock Number</th>
-                                                <th data-field="librarian_id" data-filter-control="select"
-                                                    data-sortable="true">Librarian Name</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="text-white">
-                                            @foreach ($books as $book)
-                        
-                                            <tr>
-                                                <td class="bs-checkbox "><input data-index="0" name="btSelectItem"
-                                                        type="checkbox"></td>
-                                                <td>{{ $book->title }}</td>
-                                                <td>{{ $book->author }}</td>
-                                                <td>{{ $book->category->title}}</td>
-                                                <td>{{ $book->language }}</td>
-                                                <td>{{ $book->stock_number }}</td>
-                                                <td>{{ $book->librarian->username}}</td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="searchh mt-5" action="">
+                                    <input id="myInput" onkeyup="myFunction()" type="search">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                                
+                                <table id="myTable">
+                                    <tr class="header">
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Publish Date</th>
+                                        <th>Language</th>
+                                        <th>Description</th>
+                                        <th>Stock Number</th>
+                                    </tr>
+                                    @foreach ($books as $book)
+                                    <tr>
+                                        <td><a target="_blank" href="{{ route("manager_book",$book) }}">{{ $book->title }}</a></td>
+                                        <td>{{ $book->author}}</td>
+                                        <td>{{ $book->publish_date }}</td>
+                                        <td>{{ $book->language }}</td>
+                                        <td>{{ $book->description }}</td>
+                                        <td>{{ $book->stock_number }}</td>
+                                    </tr>
+                                    @endforeach
+                                
+                                
+                                
+                                </table>
+                                <script>
+                                    function myFunction() {
+                                        // Declare variables
+                                        var input, filter, table, tr, td, i, txtValue;
+                                        input = document.getElementById("myInput");
+                                        filter = input.value.toUpperCase();
+                                        table = document.getElementById("myTable");
+                                        tr = table.getElementsByTagName("tr");
+                                
+                                        // Loop through all table rows, and hide those who don't match the search query
+                                        for (i = 0; i < tr.length; i++) {
+                                            td = tr[i].getElementsByTagName("td")[0];
+                                            if (td) {
+                                                txtValue = td.textContent || td.innerText;
+                                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                                    tr[i].style.display = "";
+                                                } else {
+                                                    tr[i].style.display = "none";
+                                                }
+                                            }
+                                        }
+                                    }
+                                </script>
+
                             </div>
 
                         </li>
                         <li>
                             <div class="uk-section ">
-                                <div class="container-fluid">
-                                    <h1 style="border-bottom: 3px solid #FFFFFF;width: 40% !important;"
-                                        class="text-white">All E-Books</h1>
-                                    <table class="text-white" id="table-ebook" data-toggle="table" data-search="true"
-                                        data-filter-control="true" data-show-export="true" data-click-to-select="true"
-                                        data-toolbar="#toolbar">
-                                        <thead>
-                                            <tr>
-                                                <th data-field="state" data-checkbox="true"></th>
-                                                <th data-field="librarian_id" data-filter-control="select"
-                                                    data-sortable="true">Librarian Name</th>
-                                                <th data-field="book_name" data-filter-control="input"
-                                                    data-sortable="true">Name of the Book</th>
-                                                <th data-field="author_name" data-filter-control="input"
-                                                    data-sortable="true">Name of Author</th>
-                                                <th data-field="category" data-filter-control="select"
-                                                    data-sortable="true">Category</th>
-                                                <th data-field="language" data-filter-control="select"
-                                                    data-sortable="true">Language</th>
-                                                <th data-field="stock" data-sortable="true">Stock Number</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="text-white">
-                                            @foreach ($ebooks as $book)
-                        
-                                            <tr>
-                                                <td class="bs-checkbox "><input data-index="0" name="btSelectItem"
-                                                        type="checkbox"></td>
-                                                        <td>{{ $book->librarian->username }}</td>
-                                                <td>{{ $book->title }}</td>
-                                                <td>{{ $book->author }}</td>
-                                                <td>{{ $book->category_id }}</td>
-                                                <td>{{ $book->language }}</td>
-                                                <td>{{ $book->stock_number }}</td>
-                                                
-                                            </tr>
-                                            @endforeach
-                                        
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <form class="searchh mt-5" action="">
+                                    <input id="myInput" onkeyup="myFunction()" type="search">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                                
+                                <table id="myTable">
+                                    <tr class="header">
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Publish Date</th>
+                                        <th>Language</th>
+                                        <th>Description</th>
+                                       
+                                    </tr>
+                                    @foreach ($ebooks as $book)
+                                    <tr>
+                                        <td><a target="_blank" href="{{ route("manager_ebook",$book) }}">{{ $book->title }}</a></td>
+                                        <td>{{ $book->author}}</td>
+                                        <td>{{ $book->publish_date }}</td>
+                                        <td>{{ $book->language }}</td>
+                                        <td>{{ $book->description }}</td>
+                                       
+                                    </tr>
+                                    @endforeach
+                                
+                                
+                                
+                                </table>
+                                <script>
+                                    function myFunction() {
+                                        // Declare variables
+                                        var input, filter, table, tr, td, i, txtValue;
+                                        input = document.getElementById("myInput");
+                                        filter = input.value.toUpperCase();
+                                        table = document.getElementById("myTable");
+                                        tr = table.getElementsByTagName("tr");
+                                
+                                        // Loop through all table rows, and hide those who don't match the search query
+                                        for (i = 0; i < tr.length; i++) {
+                                            td = tr[i].getElementsByTagName("td")[0];
+                                            if (td) {
+                                                txtValue = td.textContent || td.innerText;
+                                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                                    tr[i].style.display = "";
+                                                } else {
+                                                    tr[i].style.display = "none";
+                                                }
+                                            }
+                                        }
+                                    }
+                                </script>
+
                             </div>
 
                         </li>

@@ -71,12 +71,13 @@ Route::prefix("user")->group(function (){
     Route::get("/updateCard",[UpdateCardController::class,"index"])->name($name_prefix."updateCard");
     Route::post("/updateCard",[UpdateCardController::class,"store"]);
     
-    Route::get('/book/{book:title}', [BookController::class,"index"])->name($name_prefix."book");
+    Route::get('/book/{book}', [BookController::class,"index"])->name($name_prefix."book");
     Route::post('/book/store', [BookController::class,"store"])->name($name_prefix."book_store");
 
     Route::get('/ebooks',[EBooksController::class,"index"])->name($name_prefix."ebooks");
+    Route::get('/ebooks/{category}',[EBooksController::class,"get"])->name($name_prefix."ebooks_category");
 
-    Route::get('/ebook/{book:title}',[EBookController::class,"index"])->name($name_prefix."ebook");
+    Route::get('/ebook/{book}',[EBookController::class,"index"])->name($name_prefix."ebook");
 
     Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
 });

@@ -82,6 +82,9 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                             <li class="side-tab" uk-toggle="cls: side-tab; mode: media; media: @m">
                                 <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-plus pl-1"></i> Create Category</a>
                             </li>
+                            <li class="side-tab" uk-toggle="cls: side-tab; mode: media; media: @m">
+                                <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-plus pl-1"></i> Display Categories</a>
+                            </li>
                         </ul>
                     </div>
     
@@ -134,6 +137,54 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
     
                                     </div><!-- end .smart-forms section -->
                                 </div>
+                            </li>
+                            <li>
+                                <div class="uk-section ">
+                                    <form class="searchh mt-5" action="">
+                                        <input id="myInput" onkeyup="myFunction()" type="search">
+                                        <i class="fa fa-search"></i>
+                                    </form>
+                                    
+                                    <table id="myTable">
+                                        <tr class="header">
+            
+                                            <th>Category Name</th>
+                                        </tr>
+                                        @foreach ($categories as $category)
+                                        <tr>
+
+                                            <td>{{ $category->title }}</td>
+                                        </tr>
+                                        @endforeach
+                                    
+                                    
+                                    </table>
+                                    <script>
+                                        function myFunction() {
+                                            // Declare variables
+                                            var input, filter, table, tr, td, i, txtValue;
+                                            input = document.getElementById("myInput");
+                                            filter = input.value.toUpperCase();
+                                            table = document.getElementById("myTable");
+                                            tr = table.getElementsByTagName("tr");
+                                    
+                                            // Loop through all table rows, and hide those who don't match the search query
+                                            for (i = 0; i < tr.length; i++) {
+                                                td = tr[i].getElementsByTagName("td")[0];
+                                                if (td) {
+                                                    txtValue = td.textContent || td.innerText;
+                                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                                        tr[i].style.display = "";
+                                                    } else {
+                                                        tr[i].style.display = "none";
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    </script>
+    
+                                </div>
+    
                             </li>
                         </ul>
                     </div>

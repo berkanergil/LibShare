@@ -13,7 +13,7 @@ class LibrarianController extends Controller
 {
     public function index(Librarian $librarian){
         return view("manager.librarian",[
-            "librarian"=>$librarian,
+            "user"=>$librarian,
         ]);
     }
 
@@ -23,9 +23,9 @@ class LibrarianController extends Controller
         $this->validate($request,[
             "username" =>['required', Rule::unique('librarians')->ignore($librarian->id),"max:255"],
             "email" =>['required',Rule::unique('librarians')->ignore($librarian->id),"email"],
-            "password" =>"nullable|confirmed|min:5",
+            "surname" =>"required|max:255",
+            "phone_number" =>"required|max:255",
         ]);
-        
         if($request["submit"]=="update"){
             $request["password"]=Hash::make($request->password);
             $librarian->fill($request->all())->save();
@@ -33,7 +33,7 @@ class LibrarianController extends Controller
         }
         if($request["submit"]=="delete"){
             $librarian->delete();
-            return redirect()->route("manager_librarians");
+            return redirect()->route("manager_users");
         }
         
     }

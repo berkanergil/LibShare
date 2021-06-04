@@ -24,9 +24,12 @@
     <button  onclick="window.location.href = '{{ route('user_addEBookRequest') }}'" class="buttons text-uppercase">Donate a Book? <i class="fas fa-arrow-circle-right"></i></button>
     </div>
     <div class="logos"  style=" justify-content: space-between !important; margin-top: 50px">
-        <a class="mr-5 middle"><i class="fab fa-facebook fa-2x"></i> </a>
-        <a class="mr-5 middle"><i class="fab fa-instagram fa-2x"></i> </a>
-        <a class="middle"><i class="fab fa-twitter fa-2x"></i> </a>
+        <a href="https://www.facebook.com/profile.php?id=1124624960" target="_blank"  class="mr-5 middle"><i class="fab fa-facebook fa-2x"></i> </a>
+        <a href="https://www.instagram.com/tolgahandayanikli/?hl=tr" target="_blank" class="mr-5 middle"><i class="fab fa-instagram fa-2x"></i> </a>
+        <a href="https://twitter.com/canbaythehun" target="_blank" class="middle mr-5"><i class="fab fa-twitter fa-2x"></i> </a>
+        <a href="https://github.com/berkanergil/LibShare" target="_blank" class="middle"><i class="fab fa-github fa-2x"></i></a>
+
+
     </div>
 </footer>
 @yield('js')

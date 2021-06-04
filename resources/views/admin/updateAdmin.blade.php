@@ -1,4 +1,67 @@
 @extends('layouts.admin')
+@section('css')
+<link href="{{ asset("css/global.css") }}" rel="stylesheet">
+<link href="{{ asset("css/user/Profile.css") }}" rel="stylesheet">
+@endsection
+@section('body_css')
+style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
+@endsection
+
+
+@section('js')
+
+<script>
+    $('.mail-choice').change(function() {
+        if($(this).is(":checked")) {
+            $(this).parent().addClass('selected-bg');
+        } else {
+            $(this).parent().removeClass('selected-bg');
+        }
+    });
+
+    const colorInput = document.getElementById("colorpicker");
+
+    colorInput.addEventListener("input", (e) => {
+        document.body.style.setProperty("--button-color", e.target.value);
+    });
+
+    $('.inbox-calendar').click(function(){
+        $('.calendar-container').toggleClass('calendar-show');
+        $('.inbox-container').toggleClass('hide');
+        $('.mail-detail').toggleClass('hide');
+    });
+</script>
+<script>
+    var $table = $('#table');
+    $(function () {
+        $('#toolbar').find('select').change(function () {
+            $table.bootstrapTable('refreshOptions', {
+                exportDataType: $(this).val()
+            });
+        });
+    })
+
+    var trBoldBlue = $("table");
+
+    $(trBoldBlue).on("click", "tr", function (){
+        $(this).toggleClass("bold-blue");
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
+<script src="https://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit-icons.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+@endsection
+
 
 @section('content')
 <x-admin-nav-bar />

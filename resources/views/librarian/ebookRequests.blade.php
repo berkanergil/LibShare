@@ -28,11 +28,11 @@ style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;m
                 <img src="{{url('/images/ebook_requests/'.$book->image)}}" alt="" class="book-card-img"
                     style="width: 175px; height: 275px;">
                 <div class="card-content">
-                    <div class="book-name">{{ $book->title }}</div>
-                    <div class="book-by">{{ $book->author }}</div>
-                    <div class="book-sum card-sum">{{ $book->description }} </div>
+                    <div class="book-name">{{ ucwords($book->title) }}</div>
+                    <div class="book-by">{{ ucwords($book->author) }}</div>
+                    <div class="book-sum card-sum">{{ ucfirst($book->description) }} </div>
                 </div>
-                <p>Open <a href="{{ url('/pdfs/ebook_requests/'.$book->file) }}">EBook</a>.</p>
+                <p>Open <a href="{{ url('/pdfs/ebook_requests/'.$book->file) }}" target="_blank">EBook</a>.</p>
             </div>
 
                 <input type="hidden" name="stocked_book_id" value="{{ $book->stocked_book_id }}">

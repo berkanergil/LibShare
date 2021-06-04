@@ -100,8 +100,8 @@ style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;m
                                                 <div class="spacer-b30">
                                                     <div class="tagline"><span class="font-weight-bold" style="color: #2a0845  !important;">Book Details</span></div><!-- .tagline -->
                                                 </div>
-                                                <div>
-                                                    <img src="{{ asset("images/books/".$book->image) }}" alt="">
+                                                <div class="mb-5 d-flex justify-content-center align-items-center">
+                                                    <img  style="width: 240px; height: 380px" src="{{ asset("images/books/".$book->image) }}" alt="">
                                                 </div>
                                                 @error('title')
                                                         {{ $message }}
