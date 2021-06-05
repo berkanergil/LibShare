@@ -103,7 +103,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                                                                         <div class="spacer-b30">
                                                                                                 <div class="tagline">
                                                                                                         <span class="font-weight-bold"
-                                                                                                                style="color: #1E3E5B !important;">User
+                                                                                                                style="color: #0b8f84 !important;">User
                                                                                                                 Details</span>
                                                                                                 </div><!-- .tagline -->
                                                                                         </div>
@@ -182,7 +182,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                                                                                                         value="{{ $user->username }}">
                                                                                                                 <label for="username"
                                                                                                                         class="field-icon"><i
-                                                                                                                                class="far fa-envelope"></i></label>
+                                                                                                                                class="far fa-user"></i></label>
                                                                                                         </label>
                                                                                                 </div>
                                                                                         </div><!-- end section -->
@@ -319,13 +319,13 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
 
                                                                                 </div><!-- end .form-body section -->
                                                                                 <div class="form-footer">
-                                                                                        <button style="background: #1E3E5B !important;"
+                                                                                        <button style="background: #0b8f84 !important;"
                                                                                                 type="submit"
                                                                                                 class="button btn-primary widgets"><i
                                                                                                         class="fas fa-plus"></i>
                                                                                                 Update
                                                                                         </button>
-                                                                                        <button style="color: #FFFFFF;background: #265D84 !important;"
+                                                                                        <button style="color: #FFFFFF;background: #0aaa9d !important;"
                                                                                                 type="reset"
                                                                                                 class="button"><i
                                                                                                         class="fas fa-window-close"></i>

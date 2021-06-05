@@ -7,7 +7,7 @@
     <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/smart-forms.css" rel="stylesheet">
     <link href=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/font-awesome.min.css" rel="stylesheet">
     <link href="https://getuikit.com/assets/uikit/dist/css/uikit.css?nc=7103" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("css/table.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/tablemanager.css") }}">
 @endsection
 
 @section('js')
@@ -83,7 +83,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                 <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-plus pl-1"></i> Create Category</a>
                             </li>
                             <li class="side-tab" uk-toggle="cls: side-tab; mode: media; media: @m">
-                                <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-plus pl-1"></i> Display Categories</a>
+                                <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-eye pl-1"></i> Display Categories</a>
                             </li>
                         </ul>
                     </div>
@@ -97,7 +97,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                             @csrf
                                             <div class="form-body">
                                                 <div class="spacer-b30">
-                                                    <div class="tagline"><span class="font-weight-bold" style="color: #1E3E5B !important;">Category</span></div><!-- .tagline -->
+                                                    <div class="tagline"><span class="font-weight-bold" style="color: #0B8F84 !important;">Category</span></div><!-- .tagline -->
                                                 </div>
                                                 
                                                 @error('title')
@@ -105,11 +105,11 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                                             <br>
                                                     @enderror
 
-                                                    <div class="frm-row">
+                                                    <div class="frm-row d-flex justify-content-center align-items-center">
                                                         <div class="section colm colm6">
                                                             <label for="firstname" class="field prepend-icon">
                                                                 <input type="text" name="title" id="firstname" class="gui-input" placeholder="Title" value="{{ old("title") }}">
-                                                                <label for="firstname" class="field-icon"><i class="fa fa-user"></i></label>
+                                                                <label for="firstname" class="field-icon"><i class="fas fa-heading"></i></label>
                                                             </label>
                                                         </div><!-- end section -->
                                                       
@@ -130,8 +130,8 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
     
                                             </div><!-- end .form-body section -->
                                             <div class="form-footer">
-                                                <button style="background: #1E3E5B !important;" type="submit" class="button btn-primary widgets"><i class="fas fa-plus"></i>  Create Category </button>
-                                                <button style="color: #FFFFFF;background: #265D84 !important;" type="reset" class="button"><i class="fas fa-window-close"></i> Cancel </button>
+                                                <button style="background: #0B8F84 !important;" type="submit" class="button btn-primary widgets"><i class="fas fa-plus"></i>  Create Category </button>
+                                                <button style="color: #FFFFFF;background: #0aaa9d !important;" type="reset" class="button"><i class="fas fa-window-close"></i> Cancel </button>
                                             </div><!-- end .form-footer section -->
                                         </form>
     

@@ -7,7 +7,7 @@
     <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/smart-forms.css" rel="stylesheet">
     <link href=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/font-awesome.min.css" rel="stylesheet">
     <link href="https://getuikit.com/assets/uikit/dist/css/uikit.css?nc=7103" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("css/table.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/tablemanager.css") }}">
 @endsection
 
 @section('js')
@@ -90,7 +90,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                             <a class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m"
                                 href="#"><span class="button-tab-icon uk-visible@l"></span><i
                                     style="margin-right: 10px !important; padding-left: 6px !important;"
-                                    class="fas fa-plus pl-1"></i> Display All E-Books</a>
+                                    class="fas fa-eye pl-1"></i> Display All E-Books</a>
                         </li>
                     </ul>
                 </div>

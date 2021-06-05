@@ -81,7 +81,7 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
                 <div class="uk-width-medium@m sidebar-background">
                     <ul class="uk-nav uk-nav-default" uk-toggle="cls: uk-nav uk-nav-default uk-breadcrumb uk-padding-small; mode: media; media: @s" uk-switcher="connect: #component-nav; animation: uk-animation-fade; toggle: > :not(.uk-nav-header)">
                         <li class="side-tab" uk-toggle="cls: side-tab; mode: media; media: @m">
-                            <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-plus pl-1"></i> Create Manager</a>
+                            <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-plus pl-1"></i> Create Library Manager</a>
                         </li>
                         
                         <li class="side-tab" uk-toggle="cls: side-tab; mode: media; media: @m">
@@ -99,7 +99,7 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
                                         @csrf
                                         <div class="form-body">
                                             <div class="spacer-b30">
-                                                <div class="tagline"><span class="font-weight-bold" style="color: #1E3E5B !important;">User Details</span></div><!-- .tagline -->
+                                                <div class="tagline"><span class="font-weight-bold" style="color: #18263A !important;">User Details</span></div><!-- .tagline -->
                                             </div>
                                             
                                             @error('name')
@@ -146,7 +146,7 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
                                                 <div class="section colm colm6">
                                                     <label for="username" class="field prepend-icon">
                                                         <input type="text" name="username" id="username" class="gui-input" placeholder="Username" value="{{ old("username") }}">
-                                                        <label for="username" class="field-icon"><i class="far fa-envelope"></i></label>
+                                                        <label for="username" class="field-icon"><i class="far fa-user"></i></label>
                                                     </label>
                                                 </div>
                                             </div><!-- end section -->
@@ -219,8 +219,8 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
 
                                         </div><!-- end .form-body section -->
                                         <div class="form-footer">
-                                            <button style="background: #1E3E5B !important;" type="submit" class="button btn-primary widgets"><i class="fas fa-plus"></i>  Create Library Manager </button>
-                                            <button style="color: #FFFFFF;background: #265D84 !important;" type="reset" class="button"><i class="fas fa-window-close"></i> Cancel </button>
+                                            <button style="background: #18263A !important;" type="submit" class="button btn-primary widgets"><i class="fas fa-plus"></i>  Create Library Manager </button>
+                                            <button style="color: #FFFFFF;background: #2e5573 !important;" type="reset" class="button"><i class="fas fa-window-close"></i> Cancel </button>
                                         </div><!-- end .form-footer section -->
                                     </form>
 

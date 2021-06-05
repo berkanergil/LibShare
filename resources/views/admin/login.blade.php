@@ -28,8 +28,8 @@
       <label for="rememberme">Remember Me</label>
   </div>
   <br><br>
-  <div class="row mt-5">
-    <div class="col-lg-4 col-md-4 col-sm-12">
+  <div class="row mt-5 ">
+    <div class="col-lg-4 col-md-4 col-sm-12 ">
   <a href="#">
     <span></span>
     <span></span>
@@ -37,7 +37,7 @@
     <span></span> Submit
   </a>
     </div>
-    <div class="col-lg-8 col-md-4 col-sm-12">
+    <div class="col-lg-4 col-md-4 col-sm-12">
   <a href="/signup/signup.html" class="text-center ml-5">Sign up!</a>
     </div>
   </div>

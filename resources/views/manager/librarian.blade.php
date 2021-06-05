@@ -92,7 +92,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                     <div class="form-body">
                       <div class="spacer-b30">
                         <div class="tagline"><span class="font-weight-bold"
-                            style="color: #1E3E5B !important; font-weight: 600;">User Details</span></div>
+                            style="color: #0B8F84 !important; font-weight: 600;">User Details</span></div>
                         <!-- .tagline -->
                       </div>
                       <div class="frm-row">
@@ -111,7 +111,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                         @error('surname')
                         {{ $message }}
                         @enderror
-                        <div class="section colm colm6">
+                        <div  class="section colm colm6">
                           <label for="lastname" class="field prepend-icon">
                             <input type="text" name="surname" id="lastname" class="gui-input"
                               value="{{ ucwords($user->surname) }}">
@@ -176,9 +176,9 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                       @endif
                     </div><!-- end .form-body section -->
                     <div class="form-footer">
-                      <button style="background: #1E3E5B !important;" type="submit" name="submit" value="update"
+                      <button style="background: #0B8F84 !important;" type="submit" name="submit" value="update"
                         class="button btn-primary widgets"><i class="far fa-save"></i> Save Changes </button>
-                      <button style="color: #FFFFFF;background: #265D84 !important;" name="submit"  value="delete" type="submit" class="button"><i
+                      <button style="color: #FFFFFF;background: #0aaa9d !important;" name="submit"  value="delete" type="submit" class="button"><i
                           class="fas fa-window-close"></i> Delete </button>
                     </div><!-- end .form-footer section -->
                   </form>

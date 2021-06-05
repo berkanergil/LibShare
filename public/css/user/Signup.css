@@ -86,7 +86,7 @@ body {
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 100px #fff;
-   }
+}
 
 .login-box a span {
     position: absolute;
@@ -244,4 +244,38 @@ body {
     100% {
         bottom: 100%;
     }
+}
+
+.next-button {
+    color: white !important;
+    text-transform: uppercase !important;
+    background-color: transparent !important;
+    font-weight: bold;
+}
+
+.submit-form {
+    background-color: #141e30 !important;
+    color: #fff !important;
+}
+
+.actor-login {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 20px;
+    letter-spacing: 4px
+}
+
+.actor-login:hover {
+    background: #141e30;
+    color: #fff !important;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff, 0 0 25px #fff, 0 0 50px #fff, 0 0 100px #fff;
+    text-decoration: none;
 }

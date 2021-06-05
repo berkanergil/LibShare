@@ -92,7 +92,7 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
                     <div class="form-body">
                       <div class="spacer-b30">
                         <div class="tagline"><span class="font-weight-bold"
-                            style="color: #1E3E5B !important; font-weight: 600;">User Details</span></div>
+                            style="color: #18263a !important; font-weight: 600;">User Details</span></div>
                         <!-- .tagline -->
                       </div>
                       <div class="frm-row">
@@ -176,9 +176,9 @@ style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
                       @endif
                     </div><!-- end .form-body section -->
                     <div class="form-footer">
-                      <button style="background: #1E3E5B !important;" type="submit" name="submit" value="update"
+                      <button style="background: #18263a !important;" type="submit" name="submit" value="update"
                         class="button btn-primary widgets"><i class="far fa-save"></i> Save Changes </button>
-                      <button style="color: #FFFFFF;background: #265D84 !important;" name="submit"  value="delete" type="submit" class="button"><i
+                      <button style="color: #FFFFFF;background: #2e5573 !important;" name="submit"  value="delete" type="submit" class="button"><i
                           class="fas fa-window-close"></i> Delete </button>
                     </div><!-- end .form-footer section -->
                   </form>

@@ -104,7 +104,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                                                                         <div class="spacer-b30">
                                                                                                 <div class="tagline">
                                                                                                         <span class="font-weight-bold"
-                                                                                                                style="color: #1E3E5B !important;">User
+                                                                                                                style="color: #0B8F84 !important;">User
                                                                                                                 Details</span>
                                                                                                 </div><!-- .tagline -->
                                                                                         </div>

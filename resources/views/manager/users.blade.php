@@ -7,7 +7,7 @@
     <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/smart-forms.css" rel="stylesheet">
     <link href=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/font-awesome.min.css" rel="stylesheet">
     <link href="https://getuikit.com/assets/uikit/dist/css/uikit.css?nc=7103" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset("css/table.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/tablemanager.css") }}">
 @endsection
 
 @section('js')

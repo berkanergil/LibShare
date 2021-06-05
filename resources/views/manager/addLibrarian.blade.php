@@ -99,7 +99,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                             @csrf
                                             <div class="form-body">
                                                 <div class="spacer-b30">
-                                                    <div class="tagline"><span class="font-weight-bold" style="color: #1E3E5B !important;">User Details</span></div><!-- .tagline -->
+                                                    <div class="tagline"><span class="font-weight-bold" style="color: #0B8F84 !important;">User Details</span></div><!-- .tagline -->
                                                 </div>
                                                 
                                                 @error('name')
@@ -146,7 +146,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                                     <div class="section colm colm6">
                                                         <label for="username" class="field prepend-icon">
                                                             <input type="text" name="username" id="username" class="gui-input" placeholder="Username" value="{{ old("username") }}">
-                                                            <label for="username" class="field-icon"><i class="far fa-envelope"></i></label>
+                                                            <label for="username" class="field-icon"><i class="far fa-user"></i></label>
                                                         </label>
                                                     </div>
                                                 </div><!-- end section -->
@@ -219,8 +219,8 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
     
                                             </div><!-- end .form-body section -->
                                             <div class="form-footer">
-                                                <button style="background: #1E3E5B !important;" type="submit" class="button btn-primary widgets"><i class="fas fa-plus"></i>  Create Librarian </button>
-                                                <button style="color: #FFFFFF;background: #265D84 !important;" type="reset" class="button"><i class="fas fa-window-close"></i> Cancel </button>
+                                                <button style="background: #0B8F84 !important;" type="submit" class="button btn-primary widgets"><i class="fas fa-plus"></i>  Create Librarian </button>
+                                                <button style="color: #FFFFFF;background: #0aaa9d !important;" type="reset" class="button"><i class="fas fa-window-close"></i> Cancel </button>
                                             </div><!-- end .form-footer section -->
                                         </form>
     

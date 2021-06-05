@@ -2,8 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset("css/global.css") }}">
-<link rel="stylesheet" href="{{ asset("css/user/LibBasket.css") }}">
-<link href="{{ asset("css/user/Categories.css") }}" rel="stylesheet">
+<link href="{{ asset("css/librarian/bookrequest.css") }}" rel="stylesheet">
 <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/smart-forms.css" rel="stylesheet">
 <link href=" https://s3-us-west-2.amazonaws.com/s.cdpn.io/172203/font-awesome.min.css" rel="stylesheet">
 <link href="https://getuikit.com/assets/uikit/dist/css/uikit.css?nc=7103" rel="stylesheet">
@@ -23,22 +22,22 @@ style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;m
             <h1 class="text-white">E Book Requests</h1>
         </div>
         @foreach ($books as $book)
-        <div class="book-card">
+        <div class="book-card" >
             <div class="content-wrapper">
                 <img src="{{url('/images/ebook_requests/'.$book->image)}}" alt="" class="book-card-img"
                     style="width: 175px; height: 275px;">
-                <div class="card-content">
+                <div class="card-content ">
                     <div class="book-name">{{ ucwords($book->title) }}</div>
                     <div class="book-by">{{ ucwords($book->author) }}</div>
-                    <div class="book-sum card-sum">{{ ucfirst($book->description) }} </div>
+                    <div class="book-by">{{ ucfirst($book->description) }} </div>
                 </div>
-                <p>Open <a href="{{ url('/pdfs/ebook_requests/'.$book->file) }}" target="_blank">EBook</a>.</p>
+                <h4>Open: <a href="{{ url('/pdfs/ebook_requests/'.$book->file) }}" target="_blank">E-Book</a></h4>
             </div>
 
                 <input type="hidden" name="stocked_book_id" value="{{ $book->stocked_book_id }}">
                 <div class="modal-footer">
-                    <a href="{{ route("librarian_ebookRequestStore",$book) }}">Store</a>
-                    <a href="{{ route("librarian_ebookRequestRemove",$book) }}">Remove</a>
+                    <a class="footer-buttons" href="{{ route("librarian_ebookRequestStore",$book) }}"> <i class="fas fa-plus"></i> Store</a>
+                    <a class="footer-buttons" href="{{ route("librarian_ebookRequestRemove",$book) }}"><i class="fas fa-trash"></i> Remove</a>
                 </div>
 
             {{-- <div class=" d-flex align-items-center justify-content-center">

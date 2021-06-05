@@ -28,7 +28,7 @@
                     <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle"
                         data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                         aria-expanded="false">{{ Auth::guard('manager')->user()->name }} {{ Auth::guard('manager')->user()->surname }}</a>
-                    <span class="dropdown-menu" style="background-color: #18263A">
+                    <span class="dropdown-menu" style="background-color: #0b8f84">
                         <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item "
                             href="{{ route("manager_updateManager") }}">My Account</a>
                         <div class="dropdown-divider"></div>

@@ -85,7 +85,7 @@ style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;m
                             <a class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 9px !important; padding-left: 6px !important;" class="fas fa-eye"></i> Display All Books </a>
                         </li>
                         <li class="side-tab" uk-toggle="cls: side-tab; mode: media; media: @m">
-                            <a class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 9px !important; padding-left: 6px !important;" class="fas fa-eye"></i> Display All EBooks </a>
+                            <a class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 9px !important; padding-left: 6px !important;" class="fas fa-eye"></i> Display All E-Books </a>
                         </li>
                     </ul>
                 </div>

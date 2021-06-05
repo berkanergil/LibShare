@@ -15,8 +15,9 @@ body {
     height: 500px;
     top: 50% !important;
     left: 50%;
-    max-width: 400px;
+    width: 370px;
     padding: 40px;
+    height: 600px;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
@@ -100,11 +101,13 @@ body {
     background: linear-gradient(90deg, transparent, #fff);
     animation: btn-anim1 1s linear infinite;
 }
-.btn-2{
+
+.btn-2 {
     width: 230px !important;
     padding: auto 0 !important;
     text-transform: none !important;
 }
+
 @keyframes btn-anim1 {
     0% {
         left: -100%;
@@ -191,15 +194,16 @@ body {
     font-size: 4px;
 }
 
+.ks-cboxtags {
+    list-style: none;
+    padding: 20px;
+}
 
 .ks-cboxtags {
+    display: inline-block;
+}
 
-    list-style: none;
-    padding: 20px; }
-.ks-cboxtags  {
-
-    display: inline-block; }
-.ks-cboxtags  label {
+.ks-cboxtags label {
     display: inline-block;
     background-color: #162134;
     border: 1px solid rgba(139, 139, 139, 0.3);
@@ -216,12 +220,15 @@ body {
     -webkit-transition: all .2s;
     -o-transition: all .2s;
     transition: all .2s;
-    font-weight: 400; }
+    font-weight: 400;
+}
 
-.ks-cboxtags  label {
+.ks-cboxtags label {
     padding: 8px 12px;
-    cursor: pointer; }
-.ks-cboxtags  label::before {
+    cursor: pointer;
+}
+
+.ks-cboxtags label::before {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -236,9 +243,10 @@ body {
     transition: -webkit-transform .3s ease-in-out;
     -o-transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
-    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out; }
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
 
-.ks-cboxtags  input[type="checkbox"]:checked + label::before {
+.ks-cboxtags input[type="checkbox"]:checked+label::before {
     content: "\f00c";
     -webkit-transform: rotate(-360deg);
     -ms-transform: rotate(-360deg);
@@ -247,24 +255,24 @@ body {
     transition: -webkit-transform .3s ease-in-out;
     -o-transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
-    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out; }
+    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
 
-.ks-cboxtags  input[type="checkbox"]:checked + label {
+.ks-cboxtags input[type="checkbox"]:checked+label {
     border: 1px solid white;
     background-color: #0D1520;
     color: #fff;
     -webkit-transition: all .2s;
     -o-transition: all .2s;
-    transition: all .2s; }
+    transition: all .2s;
+}
 
+.ks-cboxtags input[type="checkbox"] {
+    opacity: 0;
+}
 
-
-.ks-cboxtags  input[type="checkbox"] {
-    opacity: 0; }
-
-.actor-login{
+.actor-login {
     position: relative;
-
     display: inline-block;
     padding: 10px 20px;
     color: #fff;
@@ -276,7 +284,8 @@ body {
     margin-top: 40px;
     letter-spacing: 4px
 }
-.actor-login:hover{
+
+.actor-login:hover {
     background: #141e30;
     color: #fff !important;
     border-radius: 5px;

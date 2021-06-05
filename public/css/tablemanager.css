@@ -23,7 +23,6 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    ;
     height: 42.5px;
     line-height: 30px;
     outline: 0;
@@ -32,7 +31,7 @@ body {
     font-size: 1em;
     border-radius: 20px;
     padding: 0 20px;
-    color: #2A0845;
+    color: #0B8F84;
 }
 
 .searchh .fa {
@@ -44,7 +43,7 @@ body {
     top: 0;
     right: 0;
     border-radius: 50%;
-    color: #2A0845 !important;
+    color: #0B8F84 !important;
     text-align: center;
     font-size: 1.2em;
     transition: all 1s;
@@ -60,7 +59,7 @@ body {
 }
 
 .searchh:hover .fa {
-    background: #2A0845;
+    background: #0B8F84;
     color: white !important;
 }
 
@@ -103,5 +102,5 @@ body {
 #myTable tr.header,
 #myTable tr:hover {
     /* Add a grey background color to the table header and on hover */
-    background-color: #2A0845;
+    background-color: #0B8F84;
 }

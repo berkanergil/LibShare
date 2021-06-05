@@ -81,7 +81,7 @@ style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;m
                     <div class="uk-width-medium@m sidebar-background">
                         <ul class="uk-nav uk-nav-default" uk-toggle="cls: uk-nav uk-nav-default uk-breadcrumb uk-padding-small; mode: media; media: @s" uk-switcher="connect: #component-nav; animation: uk-animation-fade; toggle: > :not(.uk-nav-header)">
                             <li class="side-tab" uk-toggle="cls: side-tab; mode: media; media: @m">
-                                <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="fas fa-plus pl-1"></i> Update Book</a>
+                                <a   class="side-tab-link" uk-toggle="cls: side-tab-link; mode: media; media: @m" href="#"><span class="button-tab-icon uk-visible@l" ></span><i style="margin-right: 10px !important; padding-left: 6px !important;" class="far fa-edit pl-1"></i> Update Book</a>
                             </li>
                         
                         </ul>

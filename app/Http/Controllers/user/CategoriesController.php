@@ -39,7 +39,7 @@ class CategoriesController extends Controller
     }
 
     public function get($category_id){
-        $books=Category::find($category_id)->books()->paginate(2);
+        $books=Category::find($category_id)->books()->paginate(20);
         foreach ($books as $book) {
             $book["trim"]=str_replace(' ', '', $book["title"]);
             $stocked_book=$book->stockedBooks()->orderBy('available_date','asc')->first();

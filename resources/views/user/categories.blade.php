@@ -266,7 +266,6 @@ style="background:var(--background-color-primary) "
 
         </div>
         <div>
-            {{$books->links("pagination::bootstrap-4")}}
         </div> 
 
 

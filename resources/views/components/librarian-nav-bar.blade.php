@@ -24,7 +24,7 @@ style="background: #2a0845 !important ; backdrop-filter: blur(1px); font-weight:
         </li>
         <li class="nav-item  dropdown" style="z-index: 100 !important;">
             <a style="color: #FFFFFF;font-size: 15px;" class="nav-link dropdown-toggle middle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::guard('librarian')->user()->name }} {{ Auth::guard('librarian')->user()->surname }}</a>
-            <span class="dropdown-menu" style="background-color: #18263A">
+            <span class="dropdown-menu" style="background-color: #2A0845">
                 <a style="color: #FFFFFF !important;font-size: 10px;" class="dropdown-item " href="{{ route("librarian_updateLibrarian") }}">My Account</a>
                 <div class="dropdown-divider"></div>
                 <a style="color: #FFFFFF;font-size: 10px;" class="dropdown-item " href="{{ route("librarian_logout") }}">Logout</a>

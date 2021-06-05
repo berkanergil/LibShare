@@ -205,6 +205,9 @@
 
 <body>
     <div class="container-fluid">
+    <div  class="d-flex align-items-center justify-content-center">
+      <a class="actor-login mr-md-5" href={{ route("user_login") }}>Return Login Page</a>
+</div>
     <div class="login-box">
         <h1 class="text-center">Libshare</h1>
         <h3 class="text-center" style="opacity: .5;">Sign Up</h3>
@@ -265,7 +268,7 @@
                         <span></span>
                         <span></span>
                         <span></span> 
-                        <button class="tablinks" type="button" onclick="openTab(event,'PaymentMethod')">Next</button>
+                        <button class=" next-button" type="button" onclick="openTab(event,'PaymentMethod')">Next</button>
                     </a>
             </div>
             <div id="PaymentMethod" class="tabcontent">
@@ -307,15 +310,15 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <button class="tablinks" type="button" onclick="openTab(event,'uploadPhoto')">Next</button>
+                        <button class="next-button" type="button" onclick="openTab(event,'uploadPhoto')">Next</button>
                     </a>
             </div>
             <div id="uploadPhoto" class="tabcontent">
                     <div class="user-box">
-                        <input type="file" id="img" name="image">
+                        <input class ="next-button submit-form" type="file" id="img" name="image">
                         <label>Upload a Profile Picture</label>
                     </div>
-                    <button type="submit" name="submit" value="1">Submit</button>
+                    <button class="next-button" type="submit" name="submit" value="1">Submit</button>
             </div>
             
     </form>
