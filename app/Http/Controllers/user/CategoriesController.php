@@ -1,14 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\user;
-
 use App\Models\Book;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-
 class CategoriesController extends Controller
 {
     public function index(){
@@ -37,7 +34,6 @@ class CategoriesController extends Controller
         ]
     );
     }
-
     public function get($category_id){
         $books=Category::find($category_id)->books()->paginate(20);
         foreach ($books as $book) {
@@ -63,7 +59,5 @@ class CategoriesController extends Controller
             "books"=>$books
         ]
     );
-    }
-
-    
+    }  
 }

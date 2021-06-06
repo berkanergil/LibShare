@@ -1,11 +1,10 @@
-
 .selectdiv {
     /*Don't really need this just for demo styling*/
     display: flex;
     text-align: center;
     justify-content: center;
-
 }
+
 select::-ms-expand {
     display: none;
 }
@@ -23,11 +22,9 @@ select::-ms-expand {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     /*Adjust for position however you want*/
-
     padding: 0 0 2px;
     border-bottom: 1px solid #999;
     /*left line */
-
     position: absolute;
     pointer-events: none;
 }
@@ -54,8 +51,6 @@ select::-ms-expand {
     -ms-word-break: normal;
     word-break: normal;
 }
-
-
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -93,7 +88,15 @@ body {
     margin: 0;
 }
 
-.likes, .year-book, .author, .main-menu, .profile-menu, .profile, .browse-category, .browse, .header {
+.likes,
+.year-book,
+.author,
+.main-menu,
+.profile-menu,
+.profile,
+.browse-category,
+.browse,
+.header {
     display: flex;
     align-items: center;
 }
@@ -124,6 +127,7 @@ body {
 .search-bar {
     position: relative;
 }
+
 .search-bar input {
     height: 100%;
     width: 100%;
@@ -139,6 +143,7 @@ body {
     color: #FFFFFF;
     font-family: var(--body-font);
 }
+
 .search-bar input::placeholder {
     color: var(--placeholder);
 }
@@ -147,6 +152,7 @@ body {
     border-right: 1px solid var(--border-color);
     white-space: nowrap;
 }
+
 .browse-category svg {
     width: 16px;
     margin: 2px 10px 0 8px;
@@ -157,6 +163,7 @@ body {
     font-weight: 400;
     margin-right: 120px;
 }
+
 .header-title span {
     font-weight: 500;
     color: #FFFFFF;
@@ -174,6 +181,7 @@ body {
     cursor: pointer;
     flex-shrink: 0;
 }
+
 .user-profile:before {
     content: "";
     position: absolute;
@@ -190,9 +198,11 @@ body {
 .profile {
     flex-shrink: 0;
 }
+
 .profile-menu {
     border-left: 1px solid var(--border-color);
 }
+
 .profile svg {
     width: 16px;
     margin: 0 8px 0 15px;
@@ -215,18 +225,23 @@ body {
     height: 250px;
     margin-right: 1px;
 }
+
 .book-cell:nth-child(1) {
     background-color: #fbadaf;
 }
+
 .book-cell:nth-child(2) {
     background-color: #a4e0eb;
 }
+
 .book-cell:nth-child(3) {
     background-color: #edb9d6;
 }
+
 .book-cell:nth-child(4) {
     background-color: #fdca95;
 }
+
 .book-cell:nth-child(5) {
     background-color: #cbb5e2;
 }
@@ -249,6 +264,7 @@ body {
 .flickity-prev-next-button.previous {
     left: 15px;
 }
+
 .flickity-prev-next-button.next {
     right: 15px;
 }
@@ -266,6 +282,7 @@ body {
     box-shadow: -2px 6px 19px 0px #7f818e;
     transition: 0.3s ease;
 }
+
 .book-photo:hover {
     transform: scale(1.03);
 }
@@ -316,11 +333,11 @@ h1 {
     border: none;
 }
 
-.rating > input {
+.rating>input {
     display: none;
 }
 
-.rating > label:before {
+.rating>label:before {
     margin-right: 5px;
     margin-top: 10px;
     font-size: 0.9em;
@@ -329,73 +346,73 @@ h1 {
     content: "";
 }
 
-.rating > label {
+.rating>label {
     color: #fff;
     float: right;
 }
 
-.rating > input:checked ~ label,
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
+.rating>input:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
     color: #d85d61;
 }
 
-.rating > input:checked + label:hover,
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label,
-.rating > input:checked ~ label:hover ~ label {
+.rating>input:checked+label:hover,
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+.rating>input:checked~label:hover~label {
     color: #d85d61;
 }
 
-.blue > input:checked ~ label,
-.blue:not(:checked) > label:hover,
-.blue:not(:checked) > label:hover ~ label {
+.blue>input:checked~label,
+.blue:not(:checked)>label:hover,
+.blue:not(:checked)>label:hover~label {
     color: #458997;
 }
 
-.blue > input:checked + label:hover,
-.blue > input:checked ~ label:hover,
-.blue > label:hover ~ input:checked ~ label,
-.blue > input:checked ~ label:hover ~ label {
+.blue>input:checked+label:hover,
+.blue>input:checked~label:hover,
+.blue>label:hover~input:checked~label,
+.blue>input:checked~label:hover~label {
     color: #458997;
 }
 
-.purple > input:checked ~ label,
-.purple:not(:checked) > label:hover,
-.purple:not(:checked) > label:hover ~ label {
+.purple>input:checked~label,
+.purple:not(:checked)>label:hover,
+.purple:not(:checked)>label:hover~label {
     color: #a76287;
 }
 
-.purple > input:checked + label:hover,
-.purple > input:checked ~ label:hover,
-.purple > label:hover ~ input:checked ~ label,
-.purple > input:checked ~ label:hover ~ label {
+.purple>input:checked+label:hover,
+.purple>input:checked~label:hover,
+.purple>label:hover~input:checked~label,
+.purple>input:checked~label:hover~label {
     color: #a76287;
 }
 
-.yellow > input:checked ~ label,
-.yellow:not(:checked) > label:hover,
-.yellow:not(:checked) > label:hover ~ label {
+.yellow>input:checked~label,
+.yellow:not(:checked)>label:hover,
+.yellow:not(:checked)>label:hover~label {
     color: #ffad58;
 }
 
-.yellow > input:checked + label:hover,
-.yellow > input:checked ~ label:hover,
-.yellow > label:hover ~ input:checked ~ label,
-.yellow > input:checked ~ label:hover ~ label {
+.yellow>input:checked+label:hover,
+.yellow>input:checked~label:hover,
+.yellow>label:hover~input:checked~label,
+.yellow>input:checked~label:hover~label {
     color: #ffad58;
 }
 
-.dark-purp > input:checked ~ label,
-.dark-purp:not(:checked) > label:hover,
-.dark-purp:not(:checked) > label:hover ~ label {
+.dark-purp>input:checked~label,
+.dark-purp:not(:checked)>label:hover,
+.dark-purp:not(:checked)>label:hover~label {
     color: #905587;
 }
 
-.dark-purp > input:checked + label:hover,
-.dark-purp > input:checked ~ label:hover,
-.dark-purp > label:hover ~ input:checked ~ label,
-.dark-purp > input:checked ~ label:hover ~ label {
+.dark-purp>input:checked+label:hover,
+.dark-purp>input:checked~label:hover,
+.dark-purp>label:hover~input:checked~label,
+.dark-purp>input:checked~label:hover~label {
     color: #905587;
 }
 
@@ -407,7 +424,7 @@ h1 {
     margin-top: 7px;
 }
 
-.category-options{
+.category-options {
     text-decoration: none !important;
     outline: none !important;
     color: #FFFFFF !important;
@@ -433,30 +450,39 @@ h1 {
     width: 160px;
     border-radius: 20px;
 }
+
 .book-see:hover {
     color: #ff6e72;
 }
+
 .book-see.book-blue {
     color: #a4e0eb;
 }
+
 .book-see.book-blue:hover {
     color: #22cdec;
 }
+
 .book-see.book-pink {
     color: #edb9d6;
 }
+
 .book-see.book-pink:hover {
     color: #ff6dbe;
 }
+
 .book-see.book-yellow {
     color: #fdca95;
 }
+
 .book-see.book-yellow:hover {
     color: #fb9124;
 }
+
 .book-see.book-purple {
     color: #cbb5e2;
 }
+
 .book-see.book-purple:hover {
     color: #a764ec;
 }
@@ -503,13 +529,14 @@ h1 {
 .book-types {
     margin-left: auto;
 }
+
 .book-types a {
     text-decoration: none;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-size: 14px;
 }
 
-.book-type + .book-type {
+.book-type+.book-type {
     margin-left: 20px;
 }
 
@@ -517,10 +544,14 @@ h1 {
     position: relative;
     transition: 0.2s;
 }
-.book-type.active, .book-type:hover {
+
+.book-type.active,
+.book-type:hover {
     -webkit-text-stroke: 0.3px;
 }
-.book-type.active:before, .book-type:hover:before {
+
+.book-type.active:before,
+.book-type:hover:before {
     content: "";
     position: absolute;
     width: 28px;
@@ -530,15 +561,19 @@ h1 {
     background-color: #67d4ea;
     box-shadow: 0px -1px 5px 0px #67d4ea;
 }
+
 .book-type:nth-child(2):before {
     right: 12px;
 }
+
 .book-type:nth-child(3):before {
     right: 8px;
 }
+
 .book-type:nth-child(4):before {
     right: 6px;
 }
+
 .book-type:nth-child(5):before {
     right: 20px;
 }
@@ -547,12 +582,14 @@ h1 {
     padding: 0 30px;
 }
 
-.author + .author {
+.author+.author {
     margin-top: 20px;
 }
+
 .author-name {
     font-size: 14px;
 }
+
 .author:last-child {
     margin-bottom: 40px;
 }
@@ -576,14 +613,17 @@ h1 {
     width: 45px;
     margin-right: 16px;
 }
+
 .year-book-name {
     margin-bottom: 15px;
     font-weight: 500;
 }
+
 .year-book-author {
     font-size: 13px;
 }
-.year-book + .year-book {
+
+.year-book+.year-book {
     margin-top: 20px;
 }
 
@@ -636,6 +676,7 @@ h1 {
     margin-bottom: 20px;
     transition: 0.3s ease;
 }
+
 .book-card-img:hover {
     transform: scale(1.04);
 }
@@ -663,9 +704,8 @@ h1 {
     white-space: nowrap;
 }
 
-.book-rate > label {
+.book-rate>label {
     color: #1E3E5B;
-
 }
 
 .rate {
@@ -673,16 +713,16 @@ h1 {
     white-space: nowrap;
 }
 
-.book-rate > input:checked ~ label,
-.book-rate:not(:checked) > label:hover,
-.book-rate:not(:checked) > label:hover ~ label {
+.book-rate>input:checked~label,
+.book-rate:not(:checked)>label:hover,
+.book-rate:not(:checked)>label:hover~label {
     color: #1E3E5B;
 }
 
-.book-rate > input:checked + label:hover,
-.book-rate > input:checked ~ label:hover,
-.book-rate > label:hover ~ input:checked ~ label,
-.book-rate > input:checked ~ label:hover ~ label {
+.book-rate>input:checked+label:hover,
+.book-rate>input:checked~label:hover,
+.book-rate>label:hover~input:checked~label,
+.book-rate>input:checked~label:hover~label {
     color: #1E3E5B;
 }
 
@@ -703,6 +743,7 @@ h1 {
     border-bottom: 1px solid #ebedef;
     position: relative;
 }
+
 .content-wrapper:before {
     content: "";
     position: absolute;
@@ -722,7 +763,8 @@ h1 {
 .like-profile {
     margin-top: 8px;
 }
-.like-profile + .like-profile {
+
+.like-profile+.like-profile {
     margin-left: -5px;
 }
 
@@ -740,6 +782,7 @@ h1 {
     overflow: hidden;
     white-space: nowrap;
 }
+
 .like-name span {
     font-weight: 600;
 }
@@ -749,81 +792,87 @@ h1 {
         width: 60%;
     }
 }
+
 @media (max-width: 765px) {
     .book-cell {
         width: 80%;
     }
 }
+
 @media (max-width: 575px) {
     .book-cell {
         width: 100%;
     }
 }
+
 @media (max-width: 458px) {
     .book-photo {
         width: 180px;
     }
-
     .book-voters {
         display: none;
     }
 }
+
 @media (max-width: 420px) {
     .book-see {
         width: 120px;
         font-size: 13px;
     }
-
     .book-photo {
         width: 130px;
     }
-
     .main-wrapper {
         margin-top: 50px;
     }
 }
+
 @media (max-width: 360px) {
-    .rating > label:before {
+    .rating>label:before {
         font-size: 0.8em;
     }
 }
+
 @media (max-width: 1220px) {
     .card-vote {
         display: none;
     }
 }
+
 @media (max-width: 1085px) {
-    .book-rate > label {
+    .book-rate>label {
         font-size: 0.7em;
     }
 }
+
 @media (max-width: 1045px) {
     .books-of {
         display: none;
     }
 }
+
 @media (max-width: 725px) {
-    .browse-category, .search-bar {
+    .browse-category,
+    .search-bar {
         display: none;
     }
-
     .header-title {
         margin-right: auto;
     }
-
     .book-cards {
         grid-template-columns: 1fr;
     }
-
     .book-types {
         display: none;
     }
 }
+
 @media (max-width: 372px) {
     .card-content {
         padding: 20px;
     }
 }
+
 .button-books {
     margin-top: .5rem !important;
     border: 1px solid white;
@@ -844,6 +893,7 @@ h1 {
     background-color: #FFFFFF;
     color: #1E3E5B;
 }
+
 .button-details {
     margin-top: .5rem !important;
     border: 1px solid #1E3E5B !important;
@@ -863,6 +913,7 @@ h1 {
     background-color: #1E3E5B !important;
     color: #FFFFFF !important;
 }
+
 .button-details-cancel {
     margin-top: .5rem !important;
     border: 1px solid #ff3838 !important;
@@ -882,6 +933,8 @@ h1 {
     background-color: #ff3838 !important;
     color: #FFFFFF !important;
 }
+
+
 /*Category Selection*/
 
 label.field {
@@ -896,6 +949,7 @@ label.field {
     transition-property: opacity;
     z-index: 1;
 }
+
 label.field span {
     color: inherit;
     display: block;
@@ -910,6 +964,7 @@ label.field span {
     transition-property: color, font-size, top;
     z-index: 1;
 }
+
 label.field span.required::after {
     color: inherit;
     content: "*";
@@ -922,9 +977,11 @@ label.field span.required::after {
     top: 0;
     width: 20px;
 }
+
 .error label.field span {
     color: #F02318;
 }
+
 label.field .psuedo_select {
     background: transparent;
     position: relative;
@@ -942,6 +999,7 @@ label.field .psuedo_select {
     outline: 0;
     z-index: 1;
 }
+
 label.field .psuedo_select::after {
     background: url("data:image/svg+xml;utf8,<svg fill='#666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>"), no-repeat;
     content: "";
@@ -952,6 +1010,7 @@ label.field .psuedo_select::after {
     right: 0;
     transition-property: background;
 }
+
 label.field .psuedo_select .selected {
     height: 24px;
     left: 1px;
@@ -963,6 +1022,7 @@ label.field .psuedo_select .selected {
     transition-property: opacity, transform;
     will-change: transform;
 }
+
 label.field .psuedo_select ul {
     background: #2D475E;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
@@ -978,10 +1038,12 @@ label.field .psuedo_select ul {
     width: 100%;
     z-index: 2;
 }
+
 label.field .psuedo_select ul li {
     height: 32px;
     padding: 8px 4px;
 }
+
 label.field .deselect {
     height: 100vh;
     left: 0;
@@ -990,25 +1052,29 @@ label.field .deselect {
     width: 100vw;
     z-index: -1;
 }
+
 label.field.focused {
     color: #007BED;
 }
+
 label.field.focused .psuedo_select {
     border-color: #007BED;
 }
+
 label.field.focused .psuedo_select::after {
     background: url("data:image/svg+xml;utf8,<svg fill='#007BED' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'> <path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/> <path d='M0-.75h24v24H0z' fill='none'/> </svg>"), no-repeat;
 }
+
 label.field.focused .psuedo_select ul {
     opacity: 1;
     pointer-events: all;
 }
+
 html,
 body {
     align-items: center;
     background: #E8E8E8;
     box-sizing: border-box;
-
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -1018,21 +1084,23 @@ body {
 }
 
 * {
-
     transition-duration: 0.2s;
     transition-property: none;
     transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+
 /*MODALS*/
-.modal-header{
+
+.modal-header {
     color: #1E3E5B;
     font-weight: 600;
 }
-.modal-text{
-    color: #1E3E5B;
 
+.modal-text {
+    color: #1E3E5B;
 }
+
 .disabled-button {
     margin-top: .5rem !important;
     border: 1px solid #1E3E5B !important;
@@ -1053,13 +1121,14 @@ body {
     color: #FFFFFF !important;
 }
 
+
 /*Search bar*/
 
-.searchh{
+.searchh {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     transition: all 1s;
     width: 50px;
     height: 50px;
@@ -1070,11 +1139,12 @@ body {
     padding: 5px;
 }
 
-.searchh input{
+.searchh input {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;;
+    width: 100%;
+    ;
     height: 42.5px;
     line-height: 30px;
     outline: 0;
@@ -1086,7 +1156,7 @@ body {
     color: #1E3E5B;
 }
 
-.searchh .fa{
+.searchh .fa {
     box-sizing: border-box;
     padding: 10px;
     width: 42.5px;
@@ -1101,16 +1171,16 @@ body {
     transition: all 1s;
 }
 
-.searchh:hover{
+.searchh:hover {
     width: 200px;
     cursor: pointer;
 }
 
-.searchh:hover input{
+.searchh:hover input {
     display: block;
 }
 
-.searchh:hover .fa{
+.searchh:hover .fa {
     background: #1E3E5B;
     color: white;
 }

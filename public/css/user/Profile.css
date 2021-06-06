@@ -1,115 +1,133 @@
 /*PROFILE SECTION*/
-select,input:hover{
-    border-color: #1E3E5B !important;
-    outline-color: #1E3E5B !important;
-}
-select,input:focus{
+
+select,
+input:hover {
     border-color: #1E3E5B !important;
     outline-color: #1E3E5B !important;
 }
 
-.extra-outline input:hover{
+select,
+input:focus {
     border-color: #1E3E5B !important;
     outline-color: #1E3E5B !important;
 }
 
-.extra-outline input:focus{
+.extra-outline input:hover {
     border-color: #1E3E5B !important;
     outline-color: #1E3E5B !important;
 }
-.section label i:focus{
+
+.extra-outline input:focus {
+    border-color: #1E3E5B !important;
+    outline-color: #1E3E5B !important;
+}
+
+.section label i:focus {
     color: #1E3E5B !important;
-
 }
+
 .uk-button-success {
     background-color: #8cc14c;
     color: #fff;
 }
+
 .uk-button-success:focus,
 .uk-button-success:hover {
     background-color: #8ec73b;
     color: #fff;
 }
-.uk-container{
+
+.uk-container {
     background: transparent !important;
 }
+
 .uk-button-success.uk-active,
 .uk-button-success:active {
     background-color: #72ae41 !important;
-    color: #fff ;
+    color: #fff;
 }
 
 .sidebar-background {
     background-color: transparent;
 }
-.side-tab {
 
+.side-tab {
     border-bottom: 1px solid #e5e5e5;
 }
+
 .side-tab-link {
     color: #FFFFFF !important;
     padding: 20px 20px 20px 20px !important;
     transition: all 0.15s ease-out;
 }
+
 .side-tab-link:hover {
     color: #1E3E5B !important;
     padding-left: 35px;
     transition: all 0.15s ease-out;
 }
+
 .info-car-card {
     margin: 81px 0 0 0;
     right: 0;
     top: 0;
     position: absolute !important;
 }
-.uk-nav .uk-active > a {
+
+.uk-nav .uk-active>a {
     padding-left: 35px;
     border-bottom: transparent;
     background: transparent !important;
     border-right: 3px solid #1E3E5B;
 }
-.uk-nav li > a:hover {
+
+.uk-nav li>a:hover {
     padding-left: 35px;
     border-bottom: transparent;
     background-color: #ffffff;
 }
+
 .button-icon {
     padding-left: 15px;
     padding-right: 10px;
     float: left;
     padding-top: 10px;
 }
+
 .button-tab-icon {
     padding-right: 15px;
     float: left;
 }
+
 .car-info-sidebar {
     border-left: 1px solid #fafafa;
     background-color: transparent;
 }
-@media only screen and (max-width: 980px) {
 
+@media only screen and (max-width: 980px) {
     .sidebar-car-info {
         margin-right: -300px;
         transition: all 0.15s ease-out;
     }
 }
 
-@media (min-width: 280px){
-    body{
+@media (min-width: 280px) {
+    body {
         overflow-y: visible !important;
     }
 }
 
-.widgets:hover{
+.widgets:hover {
     background: #1E3E5B !important;
 }
-.widgets i:hover{
+
+.widgets i:hover {
     background: #1E3E5B !important;
 }
 
 
 /*PROFILE PICTURE*/
+
 .circle {
     margin-left: auto;
     margin-right: auto;
@@ -119,10 +137,13 @@ select,input:focus{
     overflow: hidden;
     background: 50% -24px no-repeat;
     background-size: 200px;
+    object-fit: contain !important;
 }
 
+
 /*CREDIT CARD*/
-.creditt{
+
+.creditt {
     margin-top: 30px !important;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -138,13 +159,12 @@ select,input:focus{
     min-height: 60vh;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-
 }
+
 .payment-title {
     width: 100%;
     text-align: center;
 }
-
 
 .form-container .field-container:first-of-type {
     grid-area: name;
@@ -204,7 +224,9 @@ input {
     width: 60px;
 }
 
+
 /* CREDIT CARD IMAGE STYLING */
+
 .preload * {
     -webkit-transition: none !important;
     -moz-transition: none !important;
@@ -239,7 +261,7 @@ input {
     border-radius: 22px;
 }
 
-#generatecard{
+#generatecard {
     cursor: pointer;
     float: right;
     font-size: 12px;
@@ -248,10 +270,12 @@ input {
     background-color: #909090;
     border-radius: 4px;
     cursor: pointer;
-    float:right;
+    float: right;
 }
 
+
 /* CHANGEABLE CARD ELEMENTS */
+
 .creditcard .lightcolor,
 .creditcard .darkcolor {
     -webkit-transition: fill .5s;
@@ -330,7 +354,9 @@ input {
     fill: #616161;
 }
 
+
 /* FRONT OF CARD */
+
 #svgname {
     text-transform: uppercase;
 }
@@ -383,7 +409,9 @@ input {
     fill: #4C4C4C;
 }
 
+
 /* BACK OF CARD */
+
 #cardback .st0 {
     fill: none;
     stroke: #0F0F0F;
@@ -439,7 +467,9 @@ input {
     font-size: 37.769px;
 }
 
+
 /* FLIP ANIMATION */
+
 .container {
     perspective: 1000px;
 }

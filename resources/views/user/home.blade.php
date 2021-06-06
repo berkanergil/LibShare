@@ -13,8 +13,10 @@ style="background: var(--background-color-primary) !important;"
 <script src="{{ asset("js/user/backtotop.js") }}"></script>
 <script src="{{ asset("js/user/Home.js") }}"></script>
 <script src="{{ asset("js/user/Statistics.js") }}"></script>
-<script src="{{ asset("js/user/AnimatedBooks.js") }}"></script>
+<!-- <script src="{{ asset("js/user/AnimatedBooks.js") }}"></script> -->
 <script src="{{ asset("js/user/modernir.custom.js") }}"></script>
+<script src="{{ asset("js/user/bookthreed.js") }}"></script>
+
 @endsection
 
 @section('content')
@@ -94,7 +96,8 @@ style="background: var(--background-color-primary) !important;"
         </div>
         </section>
     <section class="d-flex justify-content-center align-items-center pt-5" style="min-height: 70vh">
-            <div class="main ">
+         
+     <div class="main ">
                 <h1 class="text-center text-white mb-5" style="border-bottom: 3px solid #1E3E5B">The Newest Arrivials</h1>
                 <ul id="bk-list" class="bk-list clearfix ">
                     <li>
@@ -234,7 +237,7 @@ style="background: var(--background-color-primary) !important;"
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </section>
 
     <section class="d-flex justify-content-center align-items-center" style="min-height: 60vh">

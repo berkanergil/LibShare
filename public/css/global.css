@@ -1,14 +1,19 @@
 /*Global Variables*/
-*::-webkit-scrollbar{
+
+*::-webkit-scrollbar {
     display: none !important;
 }
-*{
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
-:root{
+
+:root {
     /*Background*/
-    --background-color-primary: linear-gradient(90deg, #2c3e50 0%,#3498db 100% );
+    --background-color-primary: linear-gradient(90deg, #2c3e50 0%, #3498db 100%);
     /*Font-Colors*/
     --text-color-primary: #FFF !important;
     /*Font-Size*/
@@ -27,10 +32,13 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-  }
+}
+
 
 /*GENERAL*/
-html,body{
+
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,18 +48,23 @@ html,body{
 ul li {
     list-style: none;
 }
-nav{
+
+nav {
     font-family: "Segoe UI" !important;
     font-weight: 600 !important;
 }
-nav div ul li a{
+
+nav div ul li a {
     color: #FFFFFF !important;
 }
-nav>li>a:first-child{
+
+nav>li>a:first-child {
     font-size: var(--font-size-logo) !important;
 }
 
+
 /*NAVBAR ANIMATION*/
+
 a.middle {
     position: relative;
 }
@@ -74,6 +87,7 @@ a.middle:hover:before {
     transform: scaleX(1);
 }
 
+
 /*Back to Top Button*/
 
 .back-to-top {
@@ -82,6 +96,7 @@ a.middle:hover:before {
     right: 25px;
     display: block;
 }
+
 .site__footer {
     display: flex;
     flex-wrap: wrap;
@@ -93,6 +108,7 @@ a.middle:hover:before {
     padding-right: 5%;
     padding-top: 0.5em;
 }
+
 .logos a.middle:before {
     content: "";
     position: absolute;
@@ -111,9 +127,11 @@ a.middle:hover:before {
     visibility: visible;
     transform: scaleX(1);
 }
-.logos:hover{
+
+.logos:hover {
     cursor: pointer;
 }
+
 
 /*Buttons*/
 
@@ -135,4 +153,10 @@ a.middle:hover:before {
 .buttons:hover {
     background-color: white;
     color: black;
+}
+
+.social-footers {
+    outline: none;
+    text-decoration: none;
+    color: #FFFFFF !important;
 }
