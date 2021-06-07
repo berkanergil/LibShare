@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\mail\MailController;
+use App\Http\Controllers\MailController as ControllersMailController;
 use App\Http\Controllers\user\AboutController;
 use App\Http\Controllers\user\AddEBookRequestController;
 use App\Http\Controllers\user\BookController;
@@ -79,6 +81,9 @@ Route::prefix("user")->group(function (){
     Route::get('/ebooks/{category}',[EBooksController::class,"get"])->name($name_prefix."ebooks_category");
 
     Route::get('/ebook/{book}',[EBookController::class,"index"])->name($name_prefix."ebook");
+
+    Route::post("/send-email",[MailController::class,"sendEmail"])->name($name_prefix."send-email");
+    Route::get("/email",[ControllersMailController::class,"index"])->name($name_prefix."mail");
 
     Route::get('/logout', [LogoutController::class,"store"])->name($name_prefix."logout");
 });
