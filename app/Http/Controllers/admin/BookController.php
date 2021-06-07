@@ -12,7 +12,7 @@ class BookController extends Controller
     public function index(Book $book){
         return view("admin.book",[
             "book"=>$book,
-            "categories"=>Category::latest()->paginate(20)
+            "categories"=>Category::latest()->paginate(200)
         ]);
     }
 }

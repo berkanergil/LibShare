@@ -19,8 +19,8 @@ class CreateManagersTable extends Migration
             $table->foreign('admin_id')->references('id')->on('admins');
             $table->string("name")->nullable();
             $table->string("surname")->nullable();
-            $table->string("username")->unique();
-            $table->string('email')->unique();
+            $table->string("username");
+            $table->string('email');
             $table->string('phone_number')->nullable();
             $table->string("password");
             $table->rememberToken();

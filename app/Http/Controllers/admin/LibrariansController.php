@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class LibrariansController extends Controller
 {
     public function index(){
-        $librarians=Librarian::latest()->paginate(2);
+        $librarians=Librarian::latest()->paginate(200);
         return view("admin.librarians",[
             "librarians"=>$librarians
         ]);
