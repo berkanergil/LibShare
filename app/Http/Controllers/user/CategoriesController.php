@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class CategoriesController extends Controller
 {
     public function index(){
-        $books=Book::latest()->paginate(2);
+        $books=Book::latest()->paginate(200);
         foreach ($books as $book) {
             $book["trim"]=str_replace(' ', '', $book["title"]);
             $stocked_book=$book->stockedBooks()->orderBy('available_date','asc')->first();
@@ -28,14 +28,14 @@ class CategoriesController extends Controller
         }
         return view("user.categories",
         [
-            "categories"=>Category::latest()->paginate(20),
+            "categories"=>Category::latest()->paginate(200),
             "category_name"=>"",
             "books"=>$books
         ]
     );
     }
     public function get($category_id){
-        $books=Category::find($category_id)->books()->paginate(20);
+        $books=Category::find($category_id)->books()->paginate(200);
         foreach ($books as $book) {
             $book["trim"]=str_replace(' ', '', $book["title"]);
             $stocked_book=$book->stockedBooks()->orderBy('available_date','asc')->first();
@@ -54,7 +54,7 @@ class CategoriesController extends Controller
         }
         return view("user.categories",
         [
-            "categories"=>Category::latest()->paginate(20),
+            "categories"=>Category::latest()->paginate(200),
             "category_name"=>Category::find($category_id)->title,
             "books"=>$books
         ]

@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class LibrariansController extends Controller
 {
     public function index(){
-        $librarians = Librarian::latest()->paginate(2);
+        $librarians = Librarian::latest()->paginate(200);
         return view("manager.librarians",[
             "librarians"=>$librarians
         ]);

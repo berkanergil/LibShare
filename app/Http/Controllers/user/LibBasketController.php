@@ -19,4 +19,10 @@ class LibBasketController extends Controller
             "books"=>$books
         ]);
     }
+
+    public function delete($book){
+        $saved_book=SavedBook::find($book);
+        $saved_book->delete();
+        return back();
+    }
 }

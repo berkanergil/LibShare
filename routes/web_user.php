@@ -56,6 +56,7 @@ Route::prefix("user")->group(function (){
     Route::get('/books', [BooksController::class,"index"])->name($name_prefix."books");
 
     Route::get('/libbasket', [LibBasketController::class,"index"])->name($name_prefix."libbasket");
+    Route::get('/libbasket/{book}', [LibBasketController::class,"delete"])->name($name_prefix."libbasket_delete");
 
     Route::get('/reservebook/{book:saved_book_id}', [ReserveBookController::class,"index"])->name($name_prefix."reservebook");
     Route::post('/reservebook', [ReserveBookController::class,"store"])->name($name_prefix."reservebook_store");

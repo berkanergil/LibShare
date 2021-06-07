@@ -152,8 +152,7 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                         </tr>
                                         @foreach ($categories as $category)
                                         <tr>
-
-                                            <td>{{ $category->title }}</td>
+                                            <td><a href="{{ route("manager_category",$category) }}">{{ $category->title }}</a></td>
                                         </tr>
                                         @endforeach
                                     

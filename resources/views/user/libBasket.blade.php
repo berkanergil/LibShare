@@ -42,16 +42,16 @@ style="background: var(--background-color-primary) !important; "
                         Reserves</span>
                     <div class="book-sum card-sum">{{ ucfirst($book->description) }} </div>
                 </div>
-                <button class ="button-delete mr-5" type="submit"><i class="fas fa-trash"></i></button>
+                <a class ="button-delete mr-5" href="{{ route("user_libbasket_delete",$book->saved_book_id) }}"><i class="fas fa-trash"></i></a>
 
             </div>
 
             <div class=" d-flex align-items-center justify-content-center">
-                <button type="button" data-toggle="modal" data-target="#{{ trim( $book->trim) }}"
+                <button type="button" data-toggle="modal" data-target="#a{{ trim( $book->id) }}"
                     class="button-books ">View Details <i class="fas fa-info-circle"></i></button>
             </div>
             
-            <div class="modal fade" id="{{ trim( $book->trim) }}" tabindex="-1" role="dialog"
+            <div class="modal fade" id="a{{ trim( $book->id) }}" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <form action="{{route("user_reservebook_store")}}" method="post">
                     @csrf

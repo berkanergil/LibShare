@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     public function index(){
-        $books= Book::latest()->paginate(2);
+        $books= Book::latest()->paginate(200);
         return view("user.home",[
             "books"=>$books
         ]);

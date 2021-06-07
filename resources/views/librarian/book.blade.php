@@ -202,8 +202,9 @@ style="background: linear-gradient(90deg, #6441a5 0%,#2a0845 100% ) !important;m
                                                 
                                             </div><!-- end .form-body section -->
                                             <div class="form-footer">
-                                                <button style="background:#2a0845  !important;" type="submit" class="button btn-primary"><i class="fas fa-plus"></i> Update Book </button>
-                                                <button style="color: #FFFFFF;background: #7b1fa2 !important;" type="reset" class="button"><i class="fas fa-window-close"></i> Cancel </button>
+                                                <button style="background:#2a0845  !important;" type="submit" name="submit" value="update" class="button btn-primary"><i class="fas fa-plus"></i> Update Book </button>
+                                                <button style="background: #7b1fa2  !important;" type="submit" name="submit" value="delete" class="button btn-primary"><i class="fas fa-window-close"></i> Delete </button>
+                                                <!--<button style="color: #FFFFFF;background: #7b1fa2 !important;" type="submit" name="submit" value="delete"   class="submit"><i class="fas fa-window-close"></i> Delete </button>-->
                                             </div><!-- end .form-footer section -->
                                         </form>
     

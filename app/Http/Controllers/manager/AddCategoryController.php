@@ -11,7 +11,7 @@ class AddCategoryController extends Controller
 {
     public function index(){
         return view("manager.addCategory",[
-            "categories"=>Category::latest()->paginate(20)
+            "categories"=>Category::latest()->paginate(200)
         ]);
     }
 

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CategoriesController extends Controller
 {
     public function index(){
-        $categories=Category::latest()->paginate(2);
+        $categories=Category::latest()->paginate(200);
         return view("manager.categories",[
             "categories"=>$categories
         ]);

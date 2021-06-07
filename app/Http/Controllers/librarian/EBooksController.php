@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class EBooksController extends Controller
 {
     public function index(){
-        $books= EBook::latest()->paginate(2);
+        $books= EBook::latest()->paginate(200);
         return view("librarian.ebooks",[
             "books"=>$books
         ]);

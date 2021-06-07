@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class EBookRequestsController extends Controller
 {
     public function index(){
-        $books= EBookRequest::where("accept_status","=","0")->paginate(2);
+        $books= EBookRequest::where("accept_status","=","0")->paginate(200);
         return view("librarian.ebookRequests",[
             "books"=>$books
         ]);

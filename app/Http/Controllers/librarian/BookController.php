@@ -16,11 +16,12 @@ class BookController extends Controller
     public function index(Book $book){
         return view("librarian.book",[
             "book"=>$book,
-            "categories"=>Category::latest()->paginate(20)
+            "categories"=>Category::latest()->paginate(200)
         ]);
     }
 
     public function store(Request $request,Book $book){
+       if($request->submit=="update"){
         $request->validate([
             "category_id"=>"required",
             "title" =>['required',Rule::unique('books')->ignore($book->id),"max:255"],
@@ -49,5 +50,9 @@ class BookController extends Controller
             ]);
         }
         return back()->with("success","The Book Has Been Uploaded");
+        }else if($request->submit=="delete"){
+            $book->delete();
+            return redirect()->route("librarian_books");
         }
+       }
 }

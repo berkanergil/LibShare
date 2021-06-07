@@ -10,8 +10,8 @@ use App\Models\Librarian;
 class UsersController extends Controller
 {
     public function index(){
-        $users=User::latest()->paginate(20);
-        $librarians=Librarian::latest()->paginate(20);
+        $users=User::latest()->paginate(200);
+        $librarians=Librarian::latest()->paginate(200);
         return view("librarian.users",[
             "users"=>$users,
             "librarians"=>$librarians

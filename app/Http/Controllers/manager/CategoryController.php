@@ -24,7 +24,7 @@ class CategoryController extends Controller
             return back()->with("success","Categoryt info updated");
         }if($request["submit"]=="delete"){
             Category::find($request->category_id)->delete();
-            return redirect()->route("manager_categories");
+            return redirect()->route("manager_addCategory");
 
         }
         

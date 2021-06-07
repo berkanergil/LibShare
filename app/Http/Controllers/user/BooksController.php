@@ -10,8 +10,8 @@ use App\Http\Controllers\Controller;
 class BooksController extends Controller
 {
     public function index(){
-        $books=Book::latest()->paginate(100);
-        $ebooks= EBook::latest()->paginate(100);
+        $books=Book::latest()->paginate(200);
+        $ebooks= EBook::latest()->paginate(200);
         return view("user.books",[
             "books"=>$books,
             "ebooks"=>$ebooks
