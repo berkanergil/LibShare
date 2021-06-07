@@ -16,6 +16,6 @@ class MailController extends Controller
         ];
 
         Mail::to("anilegekara@gmail.com")->send(new TestMail($details,$request));
-        return "Email Sent";
+        return back();
     }
 }

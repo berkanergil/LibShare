@@ -53,15 +53,15 @@ style="background:var(--background-color-primary) "
                                                     <ul class="ks-cboxtags float-left">
     
                                                         <li>
-                                                            <input type="checkbox" name="question" id="checkboxTwo" value="Order Two">
+                                                            <input type="checkbox" name="question" id="checkboxTwo" value="QUESTION">
                                                             <label for="checkboxTwo">Question</label>
                                                         </li>
                                                         <li>
-                                                            <input type="checkbox" name="suggestion"  id="checkboxThree" value="Order Two">
+                                                            <input type="checkbox" name="suggestion"  id="checkboxThree" value="SUGGESTION">
                                                             <label for="checkboxThree">Suggestion</label>
                                                         </li>
                                                         <li>
-                                                            <input type="checkbox" name="other" id="checkboxFour" value="Order Two">
+                                                            <input type="checkbox" name="other" id="checkboxFour" value="OTHER">
                                                             <label for="checkboxFour">Other</label>
                                                         </li>
     

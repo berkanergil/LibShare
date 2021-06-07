@@ -120,9 +120,9 @@ style="background:linear-gradient(90deg, #4cb8c4 0%,#3cd3ad 100% ) !important; "
                                                     
                                                     @endif 
 
-                                                    @if (session("success"))
+                                                    @if (session("error_title"))
                                                         <span class="d-flex text-center">
-                                                            <h4  style="color: #3AE374">{{ session("success") }}</h4>
+                                                            <h4  style="color: #e3403a">{{ session("error_title") }}</h4>
                                                         </span>
                                                     
                                                     @endif 

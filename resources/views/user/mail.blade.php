@@ -7,7 +7,26 @@
     <title>Contact Mail</title>
 </head>
 <body>
-    <h1>{{ $request->name }}</h1>
+    <h1 style="color: purple">{{ $request->name }}:</h1>
+
     <p>{{ $request->message }}</p>
+
+    <ul>
+        <li>
+            @isset($request->question)
+                {{ $request->question }}
+            @endisset
+        </li>
+        <li>
+            @isset($request->suggestion)
+                {{ $request->suggestion }}
+            @endisset
+        </li>
+        <li>
+            @isset($request->other)
+                {{ $request->other }}
+            @endisset
+        </li>
+    </ul>
 </body>
 </html>
