@@ -71,7 +71,6 @@
 style="background:linear-gradient(90deg, #141e30 0%,#243b55 100% ) !important; "
 @endsection
 
-
 @section('content')
 <x-admin-nav-bar/>
 <section style="min-height: 150vh;">

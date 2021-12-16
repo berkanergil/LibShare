@@ -25,7 +25,6 @@ class CreateEBookRequestsTable extends Migration
             $table->string("language");
             $table->text("description");
             $table->string("image");
-            $table->boolean("accept_status")->default(0);
             $table->timestamps();
         });
     }
